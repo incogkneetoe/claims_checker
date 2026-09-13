@@ -1,5 +1,17 @@
 {
- "generated": "2026-09-13T14:05:27.169237+00:00",
+ "generated": "2026-09-13T14:10:04.270736+00:00",
+ "vendors": [
+  "Doordash",
+  "Uber eats",
+  "Postmates",
+  "Shipt",
+  "Comcast",
+  "Mychart",
+  "Voyager",
+  "Coinbase",
+  "Spotify",
+  "Blizzard"
+ ],
  "settlements": [
   {
    "id": "cao-e50c2be1f5d0",
@@ -10,7 +22,8 @@
    "claimUrl": "https://www.classaction.org/settlements/closed",
    "source": "ClassAction.org",
    "vendorMatch": false,
-   "firstSeen": "2026-09-13T14:05:27.169237+00:00"
+   "firstSeen": "2026-09-13T14:05:27.169237+00:00",
+   "dismissedHint": false
   }
  ]
 }
