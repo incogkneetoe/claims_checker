@@ -25,6 +25,14 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 DATA_PATH = os.path.join(ROOT, "docs", "data.json")
 VENDORS_PATH = os.path.join(ROOT, "vendors.txt")
 
+# Easiest way to manage your vendor list: a secret GitHub Gist.
+# Create one at gist.github.com with your vendors (one per line), open its
+# Raw view, and paste the URL here WITHOUT the long revision hash, e.g.
+#   https://gist.githubusercontent.com/<user>/<gist_id>/raw/vendors.txt
+# so it always serves the latest edit. A pastebin.com/raw/XXXX URL works too.
+# If empty, the VENDORS Actions secret is used, then vendors.txt.
+VENDORS_URL = "https://docs.google.com/spreadsheets/d/1jCjEKiU8iKn5aLoVkl1PLQI9H-kzmLx_BIngiMZz4OA/export?format=csv"
+
 HEADERS = {
     "User-Agent": (
         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
@@ -155,10 +163,18 @@ def scrape_topclassactions():
 
 
 def load_vendors():
-    """Vendor list: VENDORS env var (Actions secret) wins, else vendors.txt.
-    One vendor per line; anything after a comma (like year ranges) is ignored
-    for matching."""
-    raw = os.environ.get("VENDORS", "")
+    """Vendor list priority: VENDORS_URL (gist/pastebin raw), then VENDORS
+    env var (Actions secret), then vendors.txt. One vendor per line;
+    anything after a comma (like year ranges) is ignored for matching."""
+    raw = ""
+    if VENDORS_URL:
+        try:
+            raw = fetch(VENDORS_URL)
+            log("vendors loaded from URL")
+        except Exception as e:  # noqa: BLE001
+            log(f"vendor URL fetch failed, falling back: {e}")
+    if not raw.strip():
+        raw = os.environ.get("VENDORS", "")
     if not raw.strip() and os.path.exists(VENDORS_PATH):
         with open(VENDORS_PATH, encoding="utf-8") as f:
             raw = f.read()
