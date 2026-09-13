@@ -46,9 +46,11 @@ HEADERS = {
 DIAG = []  # per-run diagnostics, embedded in data.json for debugging
 
 DATE_RE = re.compile(
-    r"(January|February|March|April|May|June|July|August|September|October|"
-    r"November|December)\s+\d{1,2},?\s+\d{4}"
+    r"(?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|"
+    r"Jul(?:y)?|Aug(?:ust)?|Sep(?:t(?:ember)?)?|Oct(?:ober)?|Nov(?:ember)?|"
+    r"Dec(?:ember)?)\.?\s+\d{1,2},?\s+\d{4}"
 )
+NUM_DATE_RE = re.compile(r"\b\d{1,2}/\d{1,2}/\d{4}\b")
 MONEY_RE = re.compile(r"\$[\d,]+(?:\.\d+)?(?:\s*(?:million|billion|M|B))?", re.I)
 
 
@@ -81,7 +83,7 @@ def find_deadline(text):
         windows.append(text[idx : idx + 160])
     windows.append(text)
     for w in windows:
-        m = DATE_RE.search(w)
+        m = DATE_RE.search(w) or NUM_DATE_RE.search(w)
         if m:
             try:
                 return dateparser.parse(m.group(0)).date().isoformat()
@@ -277,6 +279,83 @@ def scrape_tca_feed():
     return out
 
 
+def scrape_tca_api_search(vendors):
+    """Per-vendor search via TCA's WordPress REST API, which is often left
+    open even when the HTML pages and search URLs are bot-walled."""
+    out = []
+    today = datetime.now(timezone.utc)
+    for i, v in enumerate(vendors):
+        url = (
+            "https://topclassactions.com/wp-json/wp/v2/posts?search="
+            + requests.utils.quote(v)
+            + "&per_page=30&_fields=title,link,content,date"
+        )
+        try:
+            body = fetch(url)
+        except Exception:  # noqa: BLE001
+            if i == 0:
+                DIAG.append("wp-api blocked on first vendor; skipping the rest")
+                try:
+                    fetch("https://topclassactions.com/sitemap_index.xml")
+                except Exception:  # noqa: BLE001
+                    pass
+                break
+            continue
+        try:
+            posts = json.loads(body)
+        except json.JSONDecodeError:
+            DIAG.append("wp-api returned non-JSON; skipping the rest")
+            break
+        if not isinstance(posts, list):
+            DIAG.append(f"wp-api unexpected shape: {str(posts)[:80]}")
+            break
+        kept = 0
+        for p in posts:
+            title = re.sub(r"<[^>]+>", " ", (p.get("title") or {}).get("rendered", "")).strip()
+            link = p.get("link", "")
+            content = re.sub(r"<[^>]+>", " ", (p.get("content") or {}).get("rendered", ""))
+            content = re.sub(r"\s+", " ", content).strip()
+            if not title or not link or "settlement" not in title.lower():
+                continue
+            if v.lower() not in (title + " " + content).lower():
+                continue
+            deadline = find_deadline(content)
+            fresh = False
+            if deadline:
+                try:
+                    fresh = dateparser.parse(deadline).date() >= today.date()
+                except (ValueError, OverflowError):
+                    fresh = False
+            else:
+                try:
+                    pub = dateparser.parse(p.get("date", ""))
+                    if pub.tzinfo is None:
+                        pub = pub.replace(tzinfo=timezone.utc)
+                    fresh = (today - pub).days < 365
+                except (ValueError, OverflowError, TypeError):
+                    fresh = False
+            if not fresh:
+                continue
+            out.append(
+                {
+                    "id": "tca-" + slug_for(link),
+                    "title": title[:140],
+                    "description": content[:220] or title,
+                    "deadline": deadline,
+                    "payout": find_payout(title) or find_payout(content),
+                    "claimUrl": link,
+                    "source": "Top Class Actions",
+                }
+            )
+            kept += 1
+        DIAG.append(f"wp-api search {v!r}: {len(posts)} posts, kept {kept}")
+        time.sleep(1)
+    uniq = {e["id"]: e for e in out}
+    out = list(uniq.values())
+    log(f"wp-api search: {len(out)} entries")
+    return out
+
+
 def load_vendors():
     """Vendor list priority: VENDORS_URL (gist/pastebin raw), then VENDORS
     env var (Actions secret), then vendors.txt. One vendor per line;
@@ -322,7 +401,8 @@ def main():
     tca = scrape_topclassactions()
     if not tca:
         tca = scrape_tca_feed()
-    scraped = scrape_classaction_org() + tca
+    targeted = scrape_tca_api_search(vendors)
+    scraped = scrape_classaction_org() + tca + targeted
     if not scraped:
         log("WARNING: both sources returned nothing; keeping existing data as-is")
 
