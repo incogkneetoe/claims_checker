@@ -37,8 +37,12 @@ HEADERS = {
     "User-Agent": (
         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
         "(KHTML, like Gecko) Chrome/126.0 Safari/537.36"
-    )
+    ),
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+    "Accept-Language": "en-US,en;q=0.9",
 }
+
+DIAG = []  # per-run diagnostics, embedded in data.json for debugging
 
 DATE_RE = re.compile(
     r"(January|February|March|April|May|June|July|August|September|October|"
@@ -52,9 +56,14 @@ def log(msg):
 
 
 def fetch(url):
-    r = requests.get(url, headers=HEADERS, timeout=30)
-    r.raise_for_status()
-    return r.text
+    try:
+        r = requests.get(url, headers=HEADERS, timeout=30)
+        DIAG.append(f"HTTP {r.status_code} len={len(r.text)} {url}")
+        r.raise_for_status()
+        return r.text
+    except requests.RequestException as e:
+        DIAG.append(f"FETCH FAIL {type(e).__name__} {url}")
+        raise
 
 
 def slug_for(url):
@@ -95,14 +104,29 @@ def scrape_classaction_org():
         return out
     soup = BeautifulSoup(html, "html.parser")
     seen = set()
-    for a in soup.select("a[href*='/settlements/']"):
+    anchors = soup.select("a[href*='/settlements/']")
+    DIAG.append(
+        "cao anchors: %d, samples: %r"
+        % (len(anchors), [a.get_text(" ", strip=True)[:40] for a in anchors[:8]])
+    )
+    for a in anchors:
         href = a.get("href", "")
         title = a.get_text(" ", strip=True)
+        tl = title.lower()
         if not href or len(title) < 8:
+            continue
+        if tl.startswith("list of") or tl in (
+            "settlements",
+            "open settlements",
+            "closed settlements",
+            "view all",
+        ):
             continue
         if href.startswith("/"):
             href = "https://www.classaction.org" + href
-        if href.rstrip("/").endswith("/settlements") or href in seen:
+        if href.rstrip("/").endswith(("/settlements", "/open", "/closed")):
+            continue
+        if href in seen:
             continue
         seen.add(href)
         container = a.find_parent(["article", "li", "section", "div"])
@@ -137,10 +161,20 @@ def scrape_topclassactions():
             log(f"topclassactions page {page} fetch failed: {e}")
             break
         soup = BeautifulSoup(html, "html.parser")
-        for h in soup.select("h2 a[href], h3 a[href]"):
+        heads = [
+            h
+            for h in soup.select("h2 a[href], h3 a[href]")
+            if "topclassactions.com" in h.get("href", "")
+        ]
+        if page == 1:
+            DIAG.append(
+                "tca anchors: %d, samples: %r"
+                % (len(heads), [h.get_text(" ", strip=True)[:40] for h in heads[:8]])
+            )
+        for h in heads:
             href = h.get("href", "")
             title = h.get_text(" ", strip=True)
-            if "topclassactions.com" not in href or len(title) < 12:
+            if len(title) < 12:
                 continue
             container = h.find_parent(["article", "li", "div"])
             ctx = container.get_text(" ", strip=True)[:800] if container else title
@@ -159,6 +193,49 @@ def scrape_topclassactions():
     uniq = {e["id"]: e for e in out}
     out = list(uniq.values())
     log(f"topclassactions: {len(out)} entries")
+    return out
+
+
+def scrape_tca_feed():
+    """WordPress RSS feed for TCA's open settlements category. Often
+    reachable when the HTML pages are bot-blocked."""
+    out = []
+    url = (
+        "https://topclassactions.com/category/lawsuit-settlements/"
+        "open-lawsuit-settlements/feed/"
+    )
+    try:
+        xml_text = fetch(url)
+    except Exception:  # noqa: BLE001
+        return out
+    import xml.etree.ElementTree as ET
+
+    try:
+        root = ET.fromstring(xml_text)
+    except ET.ParseError as e:
+        DIAG.append(f"tca feed parse error: {e}")
+        return out
+    for item in root.iter("item"):
+        title = (item.findtext("title") or "").strip()
+        link = (item.findtext("link") or "").strip()
+        desc = re.sub(r"<[^>]+>", " ", item.findtext("description") or "")
+        desc = re.sub(r"\s+", " ", desc).strip()
+        if not title or not link:
+            continue
+        ctx = title + " " + desc
+        out.append(
+            {
+                "id": "tca-" + slug_for(link),
+                "title": title[:140],
+                "description": desc[:220] or title,
+                "deadline": find_deadline(ctx),
+                "payout": find_payout(ctx),
+                "claimUrl": link,
+                "source": "Top Class Actions",
+            }
+        )
+    DIAG.append(f"tca feed items: {len(out)}")
+    log(f"topclassactions feed: {len(out)} entries")
     return out
 
 
@@ -204,7 +281,10 @@ def load_existing():
 
 def main():
     vendors = load_vendors()
-    scraped = scrape_classaction_org() + scrape_topclassactions()
+    tca = scrape_topclassactions()
+    if not tca:
+        tca = scrape_tca_feed()
+    scraped = scrape_classaction_org() + tca
     if not scraped:
         log("WARNING: both sources returned nothing; keeping existing data as-is")
 
@@ -226,9 +306,11 @@ def main():
             e["firstSeen"] = now_iso
         by_id[e["id"]] = e
 
-    # prune entries whose deadline passed more than 30 days ago
+    # prune entries whose deadline passed more than 30 days ago, plus junk
     pruned = []
     for s in by_id.values():
+        if s.get("title", "").lower().startswith("list of"):
+            continue
         d = s.get("deadline")
         if d:
             try:
@@ -243,7 +325,12 @@ def main():
     os.makedirs(os.path.dirname(DATA_PATH), exist_ok=True)
     with open(DATA_PATH, "w", encoding="utf-8") as f:
         json.dump(
-            {"generated": now_iso, "vendors": vendors, "settlements": pruned},
+            {
+                "generated": now_iso,
+                "vendors": vendors,
+                "settlements": pruned,
+                "debug": DIAG,
+            },
             f,
             indent=1,
         )
