@@ -1,0 +1,235 @@
+#!/usr/bin/env python3
+"""Claim Watch scraper.
+
+Scrapes open class action settlements from Top Class Actions and
+ClassAction.org, matches them against a vendor list, and merges results
+into docs/data.json (served by GitHub Pages).
+
+No API keys required. Safe to re-run: existing entries keep their
+firstSeen date, and a source that fails to parse simply contributes
+nothing that day instead of wiping data.
+"""
+
+import hashlib
+import json
+import os
+import re
+import sys
+from datetime import datetime, timedelta, timezone
+
+import requests
+from bs4 import BeautifulSoup
+from dateutil import parser as dateparser
+
+ROOT = os.path.dirname(os.path.abspath(__file__))
+DATA_PATH = os.path.join(ROOT, "docs", "data.json")
+VENDORS_PATH = os.path.join(ROOT, "vendors.txt")
+
+HEADERS = {
+    "User-Agent": (
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+        "(KHTML, like Gecko) Chrome/126.0 Safari/537.36"
+    )
+}
+
+DATE_RE = re.compile(
+    r"(January|February|March|April|May|June|July|August|September|October|"
+    r"November|December)\s+\d{1,2},?\s+\d{4}"
+)
+MONEY_RE = re.compile(r"\$[\d,]+(?:\.\d+)?(?:\s*(?:million|billion|M|B))?", re.I)
+
+
+def log(msg):
+    print(f"[claim-watch] {msg}", flush=True)
+
+
+def fetch(url):
+    r = requests.get(url, headers=HEADERS, timeout=30)
+    r.raise_for_status()
+    return r.text
+
+
+def slug_for(url):
+    return hashlib.sha1(url.encode()).hexdigest()[:12]
+
+
+def find_deadline(text):
+    """Return ISO date of the first date that appears near the word deadline,
+    else the first date in the text, else None."""
+    lower = text.lower()
+    idx = lower.find("deadline")
+    windows = []
+    if idx != -1:
+        windows.append(text[idx : idx + 160])
+    windows.append(text)
+    for w in windows:
+        m = DATE_RE.search(w)
+        if m:
+            try:
+                return dateparser.parse(m.group(0)).date().isoformat()
+            except (ValueError, OverflowError):
+                continue
+    return None
+
+
+def find_payout(text):
+    m = MONEY_RE.search(text)
+    return m.group(0) if m else None
+
+
+def scrape_classaction_org():
+    """ClassAction.org keeps a structured list of open settlements."""
+    out = []
+    try:
+        html = fetch("https://www.classaction.org/settlements")
+    except Exception as e:  # noqa: BLE001
+        log(f"classaction.org fetch failed: {e}")
+        return out
+    soup = BeautifulSoup(html, "html.parser")
+    seen = set()
+    for a in soup.select("a[href*='/settlements/']"):
+        href = a.get("href", "")
+        title = a.get_text(" ", strip=True)
+        if not href or len(title) < 8:
+            continue
+        if href.startswith("/"):
+            href = "https://www.classaction.org" + href
+        if href.rstrip("/").endswith("/settlements") or href in seen:
+            continue
+        seen.add(href)
+        container = a.find_parent(["article", "li", "section", "div"])
+        ctx = container.get_text(" ", strip=True)[:800] if container else title
+        out.append(
+            {
+                "id": "cao-" + slug_for(href),
+                "title": title[:140],
+                "description": ctx[:220],
+                "deadline": find_deadline(ctx),
+                "payout": find_payout(ctx),
+                "claimUrl": href,
+                "source": "ClassAction.org",
+            }
+        )
+    log(f"classaction.org: {len(out)} entries")
+    return out
+
+
+def scrape_topclassactions():
+    """Top Class Actions 'open settlements' category articles, first 3 pages."""
+    out = []
+    base = (
+        "https://topclassactions.com/category/lawsuit-settlements/"
+        "open-lawsuit-settlements/"
+    )
+    for page in range(1, 4):
+        url = base if page == 1 else f"{base}page/{page}/"
+        try:
+            html = fetch(url)
+        except Exception as e:  # noqa: BLE001
+            log(f"topclassactions page {page} fetch failed: {e}")
+            break
+        soup = BeautifulSoup(html, "html.parser")
+        for h in soup.select("h2 a[href], h3 a[href]"):
+            href = h.get("href", "")
+            title = h.get_text(" ", strip=True)
+            if "topclassactions.com" not in href or len(title) < 12:
+                continue
+            container = h.find_parent(["article", "li", "div"])
+            ctx = container.get_text(" ", strip=True)[:800] if container else title
+            out.append(
+                {
+                    "id": "tca-" + slug_for(href),
+                    "title": title[:140],
+                    "description": ctx[:220],
+                    "deadline": find_deadline(ctx),
+                    "payout": find_payout(ctx) or find_payout(title),
+                    "claimUrl": href,
+                    "source": "Top Class Actions",
+                }
+            )
+    # dedupe by id
+    uniq = {e["id"]: e for e in out}
+    out = list(uniq.values())
+    log(f"topclassactions: {len(out)} entries")
+    return out
+
+
+def load_vendors():
+    """Vendor list: VENDORS env var (Actions secret) wins, else vendors.txt.
+    One vendor per line; anything after a comma (like year ranges) is ignored
+    for matching."""
+    raw = os.environ.get("VENDORS", "")
+    if not raw.strip() and os.path.exists(VENDORS_PATH):
+        with open(VENDORS_PATH, encoding="utf-8") as f:
+            raw = f.read()
+    vendors = []
+    for line in raw.splitlines():
+        name = line.split(",")[0].strip()
+        if name and not name.startswith("#"):
+            vendors.append(name.lower())
+    log(f"vendors loaded: {len(vendors)}")
+    return vendors
+
+
+def vendor_match(entry, vendors):
+    hay = (entry.get("title", "") + " " + entry.get("description", "")).lower()
+    return any(v in hay for v in vendors)
+
+
+def load_existing():
+    if os.path.exists(DATA_PATH):
+        try:
+            with open(DATA_PATH, encoding="utf-8") as f:
+                return json.load(f)
+        except json.JSONDecodeError:
+            log("existing data.json unreadable, starting fresh")
+    return {"generated": None, "settlements": []}
+
+
+def main():
+    vendors = load_vendors()
+    scraped = scrape_classaction_org() + scrape_topclassactions()
+    if not scraped:
+        log("WARNING: both sources returned nothing; keeping existing data as-is")
+
+    existing = load_existing()
+    by_id = {s["id"]: s for s in existing.get("settlements", [])}
+    now = datetime.now(timezone.utc)
+    now_iso = now.isoformat()
+
+    for e in scraped:
+        e["vendorMatch"] = vendor_match(e, vendors)
+        if e["id"] in by_id:
+            old = by_id[e["id"]]
+            e["firstSeen"] = old.get("firstSeen", now_iso)
+            e["dismissedHint"] = old.get("dismissedHint", False)
+            # keep a previously found deadline/payout if this pass lost it
+            e["deadline"] = e["deadline"] or old.get("deadline")
+            e["payout"] = e["payout"] or old.get("payout")
+        else:
+            e["firstSeen"] = now_iso
+        by_id[e["id"]] = e
+
+    # prune entries whose deadline passed more than 30 days ago
+    pruned = []
+    for s in by_id.values():
+        d = s.get("deadline")
+        if d:
+            try:
+                if dateparser.parse(d).date() < (now - timedelta(days=30)).date():
+                    continue
+            except (ValueError, OverflowError):
+                pass
+        pruned.append(s)
+
+    pruned.sort(key=lambda s: s.get("firstSeen", ""), reverse=True)
+
+    os.makedirs(os.path.dirname(DATA_PATH), exist_ok=True)
+    with open(DATA_PATH, "w", encoding="utf-8") as f:
+        json.dump({"generated": now_iso, "settlements": pruned}, f, indent=1)
+    log(f"wrote {len(pruned)} settlements to docs/data.json")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

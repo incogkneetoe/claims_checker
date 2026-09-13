@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Claim Watch</title>
+<style>
+  :root {
+    --ink: #1C2420; --paper: #F7F8F6; --rule: #D9DED8;
+    --muted: #68716B; --green: #17694A; --red: #A33B2E;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--paper); color: var(--ink);
+    font-family: -apple-system, 'Segoe UI', Roboto, sans-serif;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 28px 18px 60px; }
+  header { border-bottom: 3px double var(--ink); padding-bottom: 14px; }
+  h1 { font-family: Georgia, 'Times New Roman', serif; font-size: 34px; margin: 0; line-height: 1.1; }
+  .sub { margin: 6px 0 0; font-size: 14px; color: var(--muted); }
+  .controls { display: flex; gap: 8px; flex-wrap: wrap; padding: 12px 0; border-bottom: 1px solid var(--rule); }
+  button, .filelink {
+    font: inherit; font-size: 14px; padding: 8px 14px; border: 1px solid var(--ink);
+    background: transparent; color: var(--ink); cursor: pointer; border-radius: 3px;
+    text-decoration: none; display: inline-block;
+  }
+  button.quiet { border-color: var(--rule); color: var(--muted); }
+  .filelink { background: var(--green); border-color: var(--green); color: #fff; }
+  input[type=search] {
+    font: inherit; font-size: 14px; padding: 8px 10px; border: 1px solid var(--rule);
+    border-radius: 3px; background: #fff; color: var(--ink); flex: 1; min-width: 140px;
+  }
+  article { padding: 16px 0; border-bottom: 1px solid var(--rule); }
+  article h2 { font-family: Georgia, 'Times New Roman', serif; font-size: 19px; margin: 0; display: inline; }
+  .badge { font-size: 12px; padding: 1px 7px; border-radius: 2px; margin-left: 8px; vertical-align: 2px; }
+  .badge.new { background: var(--ink); color: var(--paper); }
+  .badge.match { background: var(--green); color: #fff; }
+  .desc { margin: 8px 0; font-size: 14.5px; line-height: 1.45; }
+  .meta { margin: 0 0 12px; font-size: 13.5px; color: var(--muted); }
+  .meta .urgent { color: var(--red); font-weight: 600; }
+  .meta .payout { color: var(--green); font-weight: 600; }
+  .empty { padding: 40px 0; font-size: 15px; color: var(--muted); }
+  footer { margin-top: 28px; font-size: 12.5px; color: var(--muted); line-height: 1.5; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Claim Watch</h1>
+    <p class="sub" id="sub">Loading&hellip;</p>
+  </header>
+  <div class="controls">
+    <input type="search" id="q" placeholder="Filter by company or keyword">
+    <button class="quiet" id="matchesOnly">Matches only</button>
+    <button class="quiet" id="toggleDismissed">Dismissed</button>
+  </div>
+  <div id="list"></div>
+  <footer>
+    Updated daily by a scheduled scan of public settlement listings. Verify
+    eligibility and deadlines on the official settlement site before filing.
+    Only file claims where you actually qualify.
+  </footer>
+</div>
+<script>
+(function () {
+  const DK = "claimwatch:dismissed";
+  let data = { generated: null, settlements: [] };
+  let showDismissed = false;
+  let matchesOnly = false;
+  let query = "";
+
+  function dismissed() {
+    try { return JSON.parse(localStorage.getItem(DK)) || {}; }
+    catch { return {}; }
+  }
+  function setDismissed(id, val) {
+    const d = dismissed();
+    if (val) d[id] = true; else delete d[id];
+    localStorage.setItem(DK, JSON.stringify(d));
+    render();
+  }
+
+  function esc(s) {
+    return String(s || "").replace(/[&<>"]/g, c =>
+      ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  }
+
+  function daysUntil(iso) {
+    const d = new Date(iso + "T23:59:59");
+    return isNaN(d) ? null : Math.ceil((d - Date.now()) / 86400000);
+  }
+
+  function render() {
+    const dis = dismissed();
+    const cutoff = Date.now() - 48 * 3600 * 1000;
+    const q = query.toLowerCase();
+    const items = data.settlements.filter(s => {
+      if (!!dis[s.id] !== showDismissed) return false;
+      if (matchesOnly && !s.vendorMatch) return false;
+      if (q && !(s.title + " " + (s.description || "")).toLowerCase().includes(q)) return false;
+      const days = s.deadline ? daysUntil(s.deadline) : null;
+      if (days !== null && days < 0) return false;
+      return true;
+    });
+    const list = document.getElementById("list");
+    if (!items.length) {
+      list.innerHTML = '<p class="empty">' +
+        (showDismissed ? "Nothing dismissed." :
+          "Nothing here yet. The first scheduled scan fills this in, or run the workflow manually from the Actions tab.") +
+        "</p>";
+      return;
+    }
+    list.innerHTML = items.map(s => {
+      const days = s.deadline ? daysUntil(s.deadline) : null;
+      const urgent = days !== null && days <= 14;
+      const isNew = s.firstSeen && new Date(s.firstSeen).getTime() >= cutoff;
+      return '<article>' +
+        '<div><h2>' + esc(s.title) + '</h2>' +
+        (isNew && !showDismissed ? '<span class="badge new">New</span>' : '') +
+        (s.vendorMatch ? '<span class="badge match">Match</span>' : '') +
+        '</div>' +
+        '<p class="desc">' + esc(s.description) + '</p>' +
+        '<p class="meta">' +
+        '<span class="' + (urgent ? "urgent" : "") + '">' +
+        (s.deadline ? "Deadline " + esc(s.deadline) + (days !== null ? " (" + days + " days)" : "") : "Deadline unknown") +
+        '</span> &middot; <span class="payout">' + esc(s.payout || "payout unknown") + '</span>' +
+        ' &middot; ' + esc(s.source || "") +
+        '</p>' +
+        '<div style="display:flex;gap:8px;flex-wrap:wrap">' +
+        '<a class="filelink" target="_blank" rel="noopener" href="' + esc(s.claimUrl) + '">File claim</a>' +
+        '<button class="quiet" data-id="' + esc(s.id) + '" data-val="' + (showDismissed ? "0" : "1") + '">' +
+        (showDismissed ? "Restore" : "Dismiss") + '</button>' +
+        '</div></article>';
+    }).join("");
+    list.querySelectorAll("button[data-id]").forEach(b =>
+      b.addEventListener("click", () => setDismissed(b.dataset.id, b.dataset.val === "1")));
+  }
+
+  document.getElementById("q").addEventListener("input", e => { query = e.target.value; render(); });
+  document.getElementById("matchesOnly").addEventListener("click", e => {
+    matchesOnly = !matchesOnly;
+    e.target.textContent = matchesOnly ? "Showing matches" : "Matches only";
+    render();
+  });
+  document.getElementById("toggleDismissed").addEventListener("click", e => {
+    showDismissed = !showDismissed;
+    e.target.textContent = showDismissed ? "Back to active" : "Dismissed";
+    render();
+  });
+
+  fetch("data.json", { cache: "no-store" })
+    .then(r => r.json())
+    .then(d => {
+      data = d;
+      const g = d.generated ? new Date(d.generated) : null;
+      document.getElementById("sub").textContent =
+        "Open class action settlements, newest first." +
+        (g ? " Last scan " + g.toLocaleDateString() + " " +
+          g.toLocaleTimeString([], { hour: "numeric", minute: "2-digit" }) + "." : "");
+      render();
+    })
+    .catch(() => {
+      document.getElementById("sub").textContent =
+        "No data.json yet. Run the workflow once from the Actions tab.";
+    });
+})();
+</script>
+</body>
+</html>

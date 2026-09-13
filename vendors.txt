@@ -1,0 +1,5 @@
+# One vendor per line. Anything after a comma is ignored for matching,
+# so you can keep year ranges for your own reference: Comcast, 2015-2022
+# For a public repo, consider the VENDORS repo secret instead (see README).
+Comcast
+MyChart
