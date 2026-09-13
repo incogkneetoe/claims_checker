@@ -236,66 +236,44 @@ def entry_from_feed_item(it):
 
 
 def scrape_tca_feed():
-    """WordPress RSS feed for TCA's open settlements category. Often
-    reachable when the HTML pages are bot-blocked, and carries full
-    article text including claim deadlines."""
+    """Walks TCA's open-settlements category feed page by page, covering the
+    whole still-open catalog, not just recent posts. Feeds bypass the bot
+    wall that 403s their HTML pages and search URLs."""
     out = []
-    url = (
+    seen_ids = set()
+    base = (
         "https://topclassactions.com/category/lawsuit-settlements/"
         "open-lawsuit-settlements/feed/"
     )
-    try:
-        xml_text = fetch(url)
-    except Exception:  # noqa: BLE001
-        return out
-    out = [entry_from_feed_item(it) for it in parse_feed_items(xml_text)]
-    DIAG.append(f"tca feed items: {len(out)}")
-    log(f"topclassactions feed: {len(out)} entries")
-    return out
-
-
-def scrape_tca_vendor_search(vendors):
-    """Targeted per-vendor search via TCA's search feed. Finds older
-    settlements that have dropped out of the recent-articles feed but are
-    still accepting claims."""
-    out = []
-    today = datetime.now(timezone.utc)
-    for v in vendors:
-        url = "https://topclassactions.com/?s=" + requests.utils.quote(v) + "&feed=rss2"
+    today = datetime.now(timezone.utc).date()
+    for page in range(1, 9):
+        url = base if page == 1 else f"{base}?paged={page}"
         try:
             xml_text = fetch(url)
         except Exception:  # noqa: BLE001
-            continue
+            break
         items = parse_feed_items(xml_text)
-        kept = 0
+        if not items:
+            break
+        added = 0
         for it in items:
-            hay = (it["title"] + " " + it["body"]).lower()
-            if "settlement" not in it["title"].lower():
+            e = entry_from_feed_item(it)
+            if e["id"] in seen_ids:
                 continue
-            if v.lower() not in hay:
-                continue
-            deadline = find_deadline(it["body"])
-            fresh = False
-            if deadline:
+            seen_ids.add(e["id"])
+            if e["deadline"]:
                 try:
-                    fresh = dateparser.parse(deadline).date() >= today.date()
+                    if dateparser.parse(e["deadline"]).date() < today:
+                        continue
                 except (ValueError, OverflowError):
-                    fresh = False
-            elif it["pub"]:
-                try:
-                    age = today - dateparser.parse(it["pub"])
-                    fresh = age.days < 365
-                except (ValueError, OverflowError, TypeError):
-                    fresh = False
-            if not fresh:
-                continue
-            out.append(entry_from_feed_item(it))
-            kept += 1
-        DIAG.append(f"vendor search {v!r}: {len(items)} items, kept {kept}")
+                    pass
+            out.append(e)
+            added += 1
+        DIAG.append(f"tca feed page {page}: {len(items)} items, kept {added}")
+        if added == 0 and page > 1:
+            break
         time.sleep(1)
-    uniq = {e["id"]: e for e in out}
-    out = list(uniq.values())
-    log(f"vendor search: {len(out)} entries")
+    log(f"topclassactions feed: {len(out)} entries")
     return out
 
 
@@ -344,8 +322,7 @@ def main():
     tca = scrape_topclassactions()
     if not tca:
         tca = scrape_tca_feed()
-    targeted = scrape_tca_vendor_search(vendors)
-    scraped = scrape_classaction_org() + tca + targeted
+    scraped = scrape_classaction_org() + tca
     if not scraped:
         log("WARNING: both sources returned nothing; keeping existing data as-is")
 
