@@ -182,14 +182,14 @@ def load_vendors():
     for line in raw.splitlines():
         name = line.split(",")[0].strip()
         if name and not name.startswith("#"):
-            vendors.append(name.lower())
+            vendors.append(name)
     log(f"vendors loaded: {len(vendors)}")
     return vendors
 
 
 def vendor_match(entry, vendors):
     hay = (entry.get("title", "") + " " + entry.get("description", "")).lower()
-    return any(v in hay for v in vendors)
+    return any(v.lower() in hay for v in vendors)
 
 
 def load_existing():
@@ -242,7 +242,11 @@ def main():
 
     os.makedirs(os.path.dirname(DATA_PATH), exist_ok=True)
     with open(DATA_PATH, "w", encoding="utf-8") as f:
-        json.dump({"generated": now_iso, "settlements": pruned}, f, indent=1)
+        json.dump(
+            {"generated": now_iso, "vendors": vendors, "settlements": pruned},
+            f,
+            indent=1,
+        )
     log(f"wrote {len(pruned)} settlements to docs/data.json")
     return 0
 

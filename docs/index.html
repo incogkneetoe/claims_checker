@@ -42,6 +42,15 @@
   .meta .payout { color: var(--green); font-weight: 600; }
   .empty { padding: 40px 0; font-size: 15px; color: var(--muted); }
   footer { margin-top: 28px; font-size: 12.5px; color: var(--muted); line-height: 1.5; }
+  @media (max-width: 520px) {
+    .wrap { padding: 20px 14px 48px; }
+    h1 { font-size: 27px; }
+    input[type=search] { flex: 1 1 100%; }
+    .controls button { flex: 1 1 auto; }
+    button, .filelink { padding: 10px 14px; font-size: 15px; }
+    .desc { font-size: 15px; }
+    article .filelink { flex: 1; text-align: center; }
+  }
 </style>
 </head>
 <body>
@@ -52,8 +61,17 @@
   </header>
   <div class="controls">
     <input type="search" id="q" placeholder="Filter by company or keyword">
+    <button class="quiet" id="vendorsBtn">Vendors</button>
     <button class="quiet" id="matchesOnly">Matches only</button>
     <button class="quiet" id="toggleDismissed">Dismissed</button>
+  </div>
+  <div id="vendorPanel" style="display:none; padding:14px 0; border-bottom:1px solid var(--rule)">
+    <p style="margin:0 0 8px; font-size:13px; color:var(--muted)">
+      Matched against these on the last scan. Edits to the sheet take effect
+      on the next morning's run.
+      <a id="editSheet" href="#" target="_blank" rel="noopener">Edit the list</a>
+    </p>
+    <p id="vendorList" style="margin:0; font-size:14.5px; line-height:1.6"></p>
   </div>
   <div id="list"></div>
   <footer>
@@ -137,6 +155,14 @@
       b.addEventListener("click", () => setDismissed(b.dataset.id, b.dataset.val === "1")));
   }
 
+  const SHEET_EDIT =
+    "https://docs.google.com/spreadsheets/d/1jCjEKiU8iKn5aLoVkl1PLQI9H-kzmLx_BIngiMZz4OA/edit";
+  document.getElementById("editSheet").href = SHEET_EDIT;
+  document.getElementById("vendorsBtn").addEventListener("click", () => {
+    const p = document.getElementById("vendorPanel");
+    p.style.display = p.style.display === "none" ? "block" : "none";
+  });
+
   document.getElementById("q").addEventListener("input", e => { query = e.target.value; render(); });
   document.getElementById("matchesOnly").addEventListener("click", e => {
     matchesOnly = !matchesOnly;
@@ -153,6 +179,9 @@
     .then(r => r.json())
     .then(d => {
       data = d;
+      const vs = d.vendors || [];
+      document.getElementById("vendorList").textContent =
+        vs.length ? vs.join(" \u00b7 ") : "No vendors loaded on the last scan.";
       const g = d.generated ? new Date(d.generated) : null;
       document.getElementById("sub").textContent =
         "Open class action settlements, newest first." +
