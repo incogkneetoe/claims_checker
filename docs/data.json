@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-14T16:02:49.665727+00:00",
+ "generated": "2026-09-15T14:32:59.110041+00:00",
  "vendors": [
   "Doordash",
   "Uber eats",
@@ -10,9 +10,25 @@
   "Voyager",
   "Coinbase",
   "Spotify",
-  "Blizzard"
+  "Blizzard",
+  "Sprite",
+  "Coca Cola",
+  "Target",
+  "Walmart",
+  "Whole Foods"
  ],
  "settlements": [
+  {
+   "id": "tca-4eed7c00803d",
+   "title": "$3.57M Lloyd\u2019s of London insurance price-fixing class action settlement",
+   "description": "(Photo Credit: FON&#8217;s Fasai/Shutterstock) Lloyd\u2019s agreed to pay $3.57 million as part of an ongoing class action settlement to resolve claims it violated federal racketeering laws by conspiring with other insurers t",
+   "deadline": "2026-10-02",
+   "payout": "$3.57M",
+   "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/3-57m-lloyds-of-london-insurance-price-fixing-class-action-settlement/",
+   "source": "Top Class Actions",
+   "vendorMatch": false,
+   "firstSeen": "2026-09-15T14:32:59.110041+00:00"
+  },
   {
    "id": "tca-55b78634c6c2",
    "title": "$350,000 TED Foundation VPPA class action settlement",
@@ -22,7 +38,8 @@
    "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/350000-ted-foundation-vppa-class-action-settlement/",
    "source": "Top Class Actions",
    "vendorMatch": false,
-   "firstSeen": "2026-09-14T16:02:49.665727+00:00"
+   "firstSeen": "2026-09-14T16:02:49.665727+00:00",
+   "dismissedHint": false
   },
   {
    "id": "tca-b406840601b1",
@@ -602,11 +619,11 @@
   }
  ],
  "debug": [
-  "HTTP 200 len=93 https://docs.google.com/spreadsheets/d/1jCjEKiU8iKn5aLoVkl1PLQI9H-kzmLx_BIngiMZz4OA/export?format=csv",
+  "HTTP 200 len=142 https://docs.google.com/spreadsheets/d/1jCjEKiU8iKn5aLoVkl1PLQI9H-kzmLx_BIngiMZz4OA/export?format=csv",
   "HTTP 403 len=5913 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/",
   "FETCH FAIL HTTPError https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/",
-  "HTTP 200 len=2970232 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/",
-  "tca feed page 1: 73 items, kept 37",
+  "HTTP 200 len=2852817 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/",
+  "tca feed page 1: 70 items, kept 35",
   "HTTP 404 len=1285 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/?paged=2",
   "FETCH FAIL HTTPError https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/?paged=2",
   "HTTP 403 len=6076 https://topclassactions.com/wp-json/wp/v2/posts?search=Doordash&per_page=30&_fields=title,link,content,date",
@@ -614,7 +631,7 @@
   "wp-api blocked on first vendor; skipping the rest",
   "HTTP 403 len=5759 https://topclassactions.com/sitemap_index.xml",
   "FETCH FAIL HTTPError https://topclassactions.com/sitemap_index.xml",
-  "HTTP 200 len=710081 https://www.classaction.org/settlements",
+  "HTTP 200 len=757542 https://www.classaction.org/settlements",
   "cao anchors: 1, samples: ['List of Closed Settlements']"
  ]
 }
