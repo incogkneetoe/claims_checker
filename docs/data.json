@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-15T14:32:59.110041+00:00",
+ "generated": "2026-09-16T14:27:19.545246+00:00",
  "vendors": [
   "Doordash",
   "Uber eats",
@@ -19,6 +19,28 @@
  ],
  "settlements": [
   {
+   "id": "tca-aa39bb897694",
+   "title": "$117M pork price-fixing class action settlement",
+   "description": "(Photo Credit: Blaze Vale/Shuttertsock) Pork producers agreed to pay more than $117 million in a class action settlement to resolve claims they conspired together to raise the price of pork products. The pork settlement ",
+   "deadline": "2026-10-29",
+   "payout": "$117M",
+   "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/117m-pork-price-fixing-class-action-settlement/",
+   "source": "Top Class Actions",
+   "vendorMatch": false,
+   "firstSeen": "2026-09-16T14:27:19.545246+00:00"
+  },
+  {
+   "id": "tca-1a8217f3deb0",
+   "title": "$3.1M Palomar Health data breach class action settlement",
+   "description": "(Photo Credit: Summit Art Creations/Shutterstock) Palomar Health agreed to a $3.1 million class action settlement to resolve claims that it failed to prevent a 2024 data breach that compromised patient information. The P",
+   "deadline": "2026-10-07",
+   "payout": "$3.1M",
+   "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/3-1m-palomar-health-data-breach-class-action-settlement/",
+   "source": "Top Class Actions",
+   "vendorMatch": false,
+   "firstSeen": "2026-09-16T14:27:19.545246+00:00"
+  },
+  {
    "id": "tca-4eed7c00803d",
    "title": "$3.57M Lloyd\u2019s of London insurance price-fixing class action settlement",
    "description": "(Photo Credit: FON&#8217;s Fasai/Shutterstock) Lloyd\u2019s agreed to pay $3.57 million as part of an ongoing class action settlement to resolve claims it violated federal racketeering laws by conspiring with other insurers t",
@@ -27,7 +49,8 @@
    "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/3-57m-lloyds-of-london-insurance-price-fixing-class-action-settlement/",
    "source": "Top Class Actions",
    "vendorMatch": false,
-   "firstSeen": "2026-09-15T14:32:59.110041+00:00"
+   "firstSeen": "2026-09-15T14:32:59.110041+00:00",
+   "dismissedHint": false
   },
   {
    "id": "tca-55b78634c6c2",
@@ -622,8 +645,8 @@
   "HTTP 200 len=142 https://docs.google.com/spreadsheets/d/1jCjEKiU8iKn5aLoVkl1PLQI9H-kzmLx_BIngiMZz4OA/export?format=csv",
   "HTTP 403 len=5913 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/",
   "FETCH FAIL HTTPError https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/",
-  "HTTP 200 len=2852817 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/",
-  "tca feed page 1: 70 items, kept 35",
+  "HTTP 200 len=2934593 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/",
+  "tca feed page 1: 72 items, kept 36",
   "HTTP 404 len=1285 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/?paged=2",
   "FETCH FAIL HTTPError https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/?paged=2",
   "HTTP 403 len=6076 https://topclassactions.com/wp-json/wp/v2/posts?search=Doordash&per_page=30&_fields=title,link,content,date",
