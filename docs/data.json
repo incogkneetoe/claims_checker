@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-16T14:27:19.545246+00:00",
+ "generated": "2026-09-17T14:32:00.380725+00:00",
  "vendors": [
   "Doordash",
   "Uber eats",
@@ -19,6 +19,28 @@
  ],
  "settlements": [
   {
+   "id": "tca-9b88f60d8d70",
+   "title": "$167.5M Visa, Mastercard non-bank ATM class action settlement",
+   "description": "(Photo Credit: New Africa/Shutterstock) Visa and Mastercard agreed to pay a combined $167.5 million class action settlement to resolve claims that they violated federal and state antitrust laws by prohibiting independent",
+   "deadline": "2026-12-11",
+   "payout": "$167.5M",
+   "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/167-5m-visa-mastercard-non-bank-atm-class-action-settlement/",
+   "source": "Top Class Actions",
+   "vendorMatch": false,
+   "firstSeen": "2026-09-17T14:32:00.380725+00:00"
+  },
+  {
+   "id": "tca-6b63b903a927",
+   "title": "$8.31M TransUnion inaccurate credit report class action settlement",
+   "description": "(Photo Credit: vittaya pinpan/Shutterstock) TransUnion agreed to pay $8.31 million as part of a class action settlement to resolve claims that it sold inaccurate consumer reports that contained bankruptcy remarks despite",
+   "deadline": "2026-10-30",
+   "payout": "$8.31M",
+   "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/8-31m-transunion-inaccurate-credit-report-class-action-settlement/",
+   "source": "Top Class Actions",
+   "vendorMatch": false,
+   "firstSeen": "2026-09-17T14:32:00.380725+00:00"
+  },
+  {
    "id": "tca-aa39bb897694",
    "title": "$117M pork price-fixing class action settlement",
    "description": "(Photo Credit: Blaze Vale/Shuttertsock) Pork producers agreed to pay more than $117 million in a class action settlement to resolve claims they conspired together to raise the price of pork products. The pork settlement ",
@@ -27,7 +49,8 @@
    "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/117m-pork-price-fixing-class-action-settlement/",
    "source": "Top Class Actions",
    "vendorMatch": false,
-   "firstSeen": "2026-09-16T14:27:19.545246+00:00"
+   "firstSeen": "2026-09-16T14:27:19.545246+00:00",
+   "dismissedHint": false
   },
   {
    "id": "tca-1a8217f3deb0",
@@ -38,7 +61,8 @@
    "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/3-1m-palomar-health-data-breach-class-action-settlement/",
    "source": "Top Class Actions",
    "vendorMatch": false,
-   "firstSeen": "2026-09-16T14:27:19.545246+00:00"
+   "firstSeen": "2026-09-16T14:27:19.545246+00:00",
+   "dismissedHint": false
   },
   {
    "id": "tca-4eed7c00803d",
@@ -645,8 +669,8 @@
   "HTTP 200 len=142 https://docs.google.com/spreadsheets/d/1jCjEKiU8iKn5aLoVkl1PLQI9H-kzmLx_BIngiMZz4OA/export?format=csv",
   "HTTP 403 len=5913 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/",
   "FETCH FAIL HTTPError https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/",
-  "HTTP 200 len=2934593 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/",
-  "tca feed page 1: 72 items, kept 36",
+  "HTTP 200 len=2928773 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/",
+  "tca feed page 1: 71 items, kept 38",
   "HTTP 404 len=1285 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/?paged=2",
   "FETCH FAIL HTTPError https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/?paged=2",
   "HTTP 403 len=6076 https://topclassactions.com/wp-json/wp/v2/posts?search=Doordash&per_page=30&_fields=title,link,content,date",
@@ -654,7 +678,7 @@
   "wp-api blocked on first vendor; skipping the rest",
   "HTTP 403 len=5759 https://topclassactions.com/sitemap_index.xml",
   "FETCH FAIL HTTPError https://topclassactions.com/sitemap_index.xml",
-  "HTTP 200 len=757542 https://www.classaction.org/settlements",
+  "HTTP 200 len=733401 https://www.classaction.org/settlements",
   "cao anchors: 1, samples: ['List of Closed Settlements']"
  ]
 }
