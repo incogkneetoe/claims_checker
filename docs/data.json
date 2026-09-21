@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-20T13:48:12.021463+00:00",
+ "generated": "2026-09-21T16:04:42.615651+00:00",
  "vendors": [
   "Doordash",
   "Uber eats",
@@ -719,7 +719,7 @@
   "HTTP 200 len=142 https://docs.google.com/spreadsheets/d/1jCjEKiU8iKn5aLoVkl1PLQI9H-kzmLx_BIngiMZz4OA/export?format=csv",
   "HTTP 403 len=5913 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/",
   "FETCH FAIL HTTPError https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/",
-  "HTTP 200 len=3052645 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/",
+  "HTTP 200 len=3052674 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/",
   "tca feed page 1: 74 items, kept 41",
   "HTTP 404 len=1285 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/?paged=2",
   "FETCH FAIL HTTPError https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/?paged=2",
