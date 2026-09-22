@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-21T16:04:42.615651+00:00",
+ "generated": "2026-09-22T14:15:11.622222+00:00",
  "vendors": [
   "Doordash",
   "Uber eats",
@@ -18,6 +18,17 @@
   "Whole Foods"
  ],
  "settlements": [
+  {
+   "id": "tca-b84af9e6f6d7",
+   "title": "$2.8M FinWise Bank data breach class action settlement",
+   "description": "(Photo Credit: Digineer Station/Shutterstock) FinWise Bank, FinWise Bancorp and American First Finance agreed to a $2.8 million class action settlement to resolve claims they failed to prevent a 2024 data breach that com",
+   "deadline": "2026-09-29",
+   "payout": "$2.8M",
+   "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/2-8m-finwise-bank-data-breach-class-action-settlement/",
+   "source": "Top Class Actions",
+   "vendorMatch": false,
+   "firstSeen": "2026-09-22T14:15:11.622222+00:00"
+  },
   {
    "id": "tca-8545b101a484",
    "title": "$4.5M AMN Healthcare privacy violations class action settlement",
@@ -719,8 +730,8 @@
   "HTTP 200 len=142 https://docs.google.com/spreadsheets/d/1jCjEKiU8iKn5aLoVkl1PLQI9H-kzmLx_BIngiMZz4OA/export?format=csv",
   "HTTP 403 len=5913 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/",
   "FETCH FAIL HTTPError https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/",
-  "HTTP 200 len=3052674 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/",
-  "tca feed page 1: 74 items, kept 41",
+  "HTTP 200 len=3139335 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/",
+  "tca feed page 1: 76 items, kept 41",
   "HTTP 404 len=1285 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/?paged=2",
   "FETCH FAIL HTTPError https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/?paged=2",
   "HTTP 403 len=6076 https://topclassactions.com/wp-json/wp/v2/posts?search=Doordash&per_page=30&_fields=title,link,content,date",
@@ -728,7 +739,7 @@
   "wp-api blocked on first vendor; skipping the rest",
   "HTTP 403 len=5759 https://topclassactions.com/sitemap_index.xml",
   "FETCH FAIL HTTPError https://topclassactions.com/sitemap_index.xml",
-  "HTTP 200 len=726998 https://www.classaction.org/settlements",
+  "HTTP 200 len=720194 https://www.classaction.org/settlements",
   "cao anchors: 1, samples: ['List of Closed Settlements']"
  ]
 }
