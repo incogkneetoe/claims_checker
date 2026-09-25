@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-24T14:30:54.300381+00:00",
+ "generated": "2026-09-25T14:51:15.929581+00:00",
  "vendors": [
   "Doordash",
   "Uber eats",
@@ -19,6 +19,28 @@
  ],
  "settlements": [
   {
+   "id": "tca-7ed7abe76938",
+   "title": "Navy Federal Credit Union unauthorized loans class action settlement",
+   "description": "(Photo Credit: Michael Vi/Shutterstock) Navy Federal Credit Union (NFCU) agreed to a class action settlement to resolve claims that it failed to prevent third parties from opening unauthorized personal loan accounts in m",
+   "deadline": "2026-11-09",
+   "payout": "$250",
+   "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/navy-federal-credit-union-unauthorized-loans-class-action-settlement/",
+   "source": "Top Class Actions",
+   "vendorMatch": false,
+   "firstSeen": "2026-09-25T14:51:15.929581+00:00"
+  },
+  {
+   "id": "tca-4f4e7a186235",
+   "title": "Furniture Mart USA data breach class action settlement",
+   "description": "(Photo Credit: Koupei Studio/Shutterstock) Furniture Mart USA agreed to a class action settlement to resolve claims that it failed to prevent a 2024 data breach that compromised sensitive consumer information. The Furnit",
+   "deadline": "2026-10-05",
+   "payout": "$4,500",
+   "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/furniture-mart-usa-data-breach-class-action-settlement/",
+   "source": "Top Class Actions",
+   "vendorMatch": false,
+   "firstSeen": "2026-09-25T14:51:15.929581+00:00"
+  },
+  {
    "id": "tca-8f43bf5f45dd",
    "title": "$2.99M Modernizing Medicine data breach class action settlement",
    "description": "(Photo Credit: Summit Art Creations/Shutterstock) Modernizing Medicine Inc. (ModMed) agreed to a $2.99 million class action settlement to resolve claims it failed to protect patient information from a 2025 data breach. T",
@@ -27,7 +49,8 @@
    "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/2-99m-modernizing-medicine-data-breach-class-action-settlement/",
    "source": "Top Class Actions",
    "vendorMatch": false,
-   "firstSeen": "2026-09-24T14:30:54.300381+00:00"
+   "firstSeen": "2026-09-24T14:30:54.300381+00:00",
+   "dismissedHint": false
   },
   {
    "id": "tca-7fe7f2f41635",
@@ -38,7 +61,8 @@
    "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/2-03m-amwell-livehealth-online-data-sharing-class-action-settlement/",
    "source": "Top Class Actions",
    "vendorMatch": false,
-   "firstSeen": "2026-09-24T14:30:54.300381+00:00"
+   "firstSeen": "2026-09-24T14:30:54.300381+00:00",
+   "dismissedHint": false
   },
   {
    "id": "tca-a23a09cf54c0",
@@ -777,8 +801,8 @@
   "HTTP 200 len=142 https://docs.google.com/spreadsheets/d/1jCjEKiU8iKn5aLoVkl1PLQI9H-kzmLx_BIngiMZz4OA/export?format=csv",
   "HTTP 403 len=5913 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/",
   "FETCH FAIL HTTPError https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/",
-  "HTTP 200 len=3221653 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/",
-  "tca feed page 1: 78 items, kept 43",
+  "HTTP 200 len=3306292 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/",
+  "tca feed page 1: 80 items, kept 44",
   "HTTP 404 len=1285 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/?paged=2",
   "FETCH FAIL HTTPError https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/?paged=2",
   "HTTP 403 len=6076 https://topclassactions.com/wp-json/wp/v2/posts?search=Doordash&per_page=30&_fields=title,link,content,date",
