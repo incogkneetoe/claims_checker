@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-25T14:51:15.929581+00:00",
+ "generated": "2026-09-26T13:57:06.062494+00:00",
  "vendors": [
   "Doordash",
   "Uber eats",
@@ -19,6 +19,17 @@
  ],
  "settlements": [
   {
+   "id": "tca-fdaf75ea3b5a",
+   "title": "$1.75M American Vision Partners data breach class action settlement",
+   "description": "(Photo Credit: Digineer Station/Shutterstock) American Vision Partners agreed to a $1.75 million class action settlement to resolve claims it failed to prevent a 2023 data breach that compromised sensitive patient inform",
+   "deadline": "2026-10-13",
+   "payout": "$1.75M",
+   "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/1-75m-american-vision-partners-data-breach-class-action-settlement/",
+   "source": "Top Class Actions",
+   "vendorMatch": false,
+   "firstSeen": "2026-09-26T13:57:06.062494+00:00"
+  },
+  {
    "id": "tca-7ed7abe76938",
    "title": "Navy Federal Credit Union unauthorized loans class action settlement",
    "description": "(Photo Credit: Michael Vi/Shutterstock) Navy Federal Credit Union (NFCU) agreed to a class action settlement to resolve claims that it failed to prevent third parties from opening unauthorized personal loan accounts in m",
@@ -27,7 +38,8 @@
    "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/navy-federal-credit-union-unauthorized-loans-class-action-settlement/",
    "source": "Top Class Actions",
    "vendorMatch": false,
-   "firstSeen": "2026-09-25T14:51:15.929581+00:00"
+   "firstSeen": "2026-09-25T14:51:15.929581+00:00",
+   "dismissedHint": false
   },
   {
    "id": "tca-4f4e7a186235",
@@ -38,7 +50,8 @@
    "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/furniture-mart-usa-data-breach-class-action-settlement/",
    "source": "Top Class Actions",
    "vendorMatch": false,
-   "firstSeen": "2026-09-25T14:51:15.929581+00:00"
+   "firstSeen": "2026-09-25T14:51:15.929581+00:00",
+   "dismissedHint": false
   },
   {
    "id": "tca-8f43bf5f45dd",
@@ -801,8 +814,8 @@
   "HTTP 200 len=142 https://docs.google.com/spreadsheets/d/1jCjEKiU8iKn5aLoVkl1PLQI9H-kzmLx_BIngiMZz4OA/export?format=csv",
   "HTTP 403 len=5913 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/",
   "FETCH FAIL HTTPError https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/",
-  "HTTP 200 len=3306292 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/",
-  "tca feed page 1: 80 items, kept 44",
+  "HTTP 200 len=3266707 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/",
+  "tca feed page 1: 79 items, kept 42",
   "HTTP 404 len=1285 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/?paged=2",
   "FETCH FAIL HTTPError https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/?paged=2",
   "HTTP 403 len=6076 https://topclassactions.com/wp-json/wp/v2/posts?search=Doordash&per_page=30&_fields=title,link,content,date",
