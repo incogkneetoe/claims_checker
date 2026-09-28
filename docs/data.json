@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-27T14:53:58.327215+00:00",
+ "generated": "2026-09-28T17:52:12.642972+00:00",
  "vendors": [
   "Doordash",
   "Uber eats",
@@ -18,6 +18,17 @@
   "Whole Foods"
  ],
  "settlements": [
+  {
+   "id": "tca-4c4f626476fa",
+   "title": "$15M Levoit air purifier class action settlement",
+   "description": "(Photo Credit: marketlan/Shutterstock) Vesync agreed to a $15 million class action settlement to resolve claims that it falsely advertised Levoit air purifiers as having \u201cTrue HEPA\u201d filters. The Levoit settlement benefit",
+   "deadline": "2026-11-03",
+   "payout": "$15M",
+   "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/15m-levoit-air-purifier-class-action-settlement/",
+   "source": "Top Class Actions",
+   "vendorMatch": false,
+   "firstSeen": "2026-09-28T17:52:12.642972+00:00"
+  },
   {
    "id": "tca-fdaf75ea3b5a",
    "title": "$1.75M American Vision Partners data breach class action settlement",
@@ -815,8 +826,8 @@
   "HTTP 200 len=142 https://docs.google.com/spreadsheets/d/1jCjEKiU8iKn5aLoVkl1PLQI9H-kzmLx_BIngiMZz4OA/export?format=csv",
   "HTTP 403 len=5913 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/",
   "FETCH FAIL HTTPError https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/",
-  "HTTP 200 len=3266712 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/",
-  "tca feed page 1: 79 items, kept 42",
+  "HTTP 200 len=3265502 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/",
+  "tca feed page 1: 79 items, kept 43",
   "HTTP 404 len=1285 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/?paged=2",
   "FETCH FAIL HTTPError https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/?paged=2",
   "HTTP 403 len=6076 https://topclassactions.com/wp-json/wp/v2/posts?search=Doordash&per_page=30&_fields=title,link,content,date",
@@ -824,7 +835,7 @@
   "wp-api blocked on first vendor; skipping the rest",
   "HTTP 403 len=5759 https://topclassactions.com/sitemap_index.xml",
   "FETCH FAIL HTTPError https://topclassactions.com/sitemap_index.xml",
-  "HTTP 200 len=785451 https://www.classaction.org/settlements",
+  "HTTP 200 len=747255 https://www.classaction.org/settlements",
   "cao anchors: 1, samples: ['List of Closed Settlements']"
  ]
 }
