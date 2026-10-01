@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-30T16:09:13.758752+00:00",
+ "generated": "2026-10-01T16:46:51.869390+00:00",
  "vendors": [
   "Doordash",
   "Uber eats",
@@ -19,6 +19,28 @@
  ],
  "settlements": [
   {
+   "id": "tca-e852225c9bcb",
+   "title": "Kia Optima, Sportage defective window regulator class action settlement",
+   "description": "(Photo Credit: Everyonephoto Studio/Shutterstock) Kia has agreed to a class action settlement to resolve claims that certain Kia Optima and Sportage vehicles are equipped with defective window regulators. The Kia settlem",
+   "deadline": "2026-10-23",
+   "payout": "$400",
+   "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/kia-optima-sportage-defective-window-regulator-class-action-settlement/",
+   "source": "Top Class Actions",
+   "vendorMatch": false,
+   "firstSeen": "2026-10-01T16:46:51.869390+00:00"
+  },
+  {
+   "id": "tca-5d2b2a4ab7bf",
+   "title": "OneTouchPoint data breach class action settlement",
+   "description": "(Photo Credit: Reed Nathaniel/Shutterstock) OneTouchPoint agreed to a class action settlement to resolve claims that it failed to prevent a 2022 data breach that compromised sensitive consumer information. The OneTouchPo",
+   "deadline": "2026-10-16",
+   "payout": "$500",
+   "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/onetouchpoint-data-breach-class-action-settlement/",
+   "source": "Top Class Actions",
+   "vendorMatch": false,
+   "firstSeen": "2026-10-01T16:46:51.869390+00:00"
+  },
+  {
    "id": "tca-a7f8996e4621",
    "title": "$4.25M Wellstar Health tracking pixel class action settlement",
    "description": "(Photo Credit: Khaohom Mali/Shutterstock) Wellstar Health System has agreed to a $4.25 million class action settlement to resolve claims it used tracking technologies on its website that disclosed patient information to ",
@@ -27,7 +49,8 @@
    "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/4-25m-wellstar-health-tracking-pixel-class-action-settlement/",
    "source": "Top Class Actions",
    "vendorMatch": false,
-   "firstSeen": "2026-09-30T16:09:13.758752+00:00"
+   "firstSeen": "2026-09-30T16:09:13.758752+00:00",
+   "dismissedHint": false
   },
   {
    "id": "tca-d8ecbafb4b07",
@@ -38,7 +61,8 @@
    "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/schnucks-rewards-class-action-settlement/",
    "source": "Top Class Actions",
    "vendorMatch": false,
-   "firstSeen": "2026-09-30T16:09:13.758752+00:00"
+   "firstSeen": "2026-09-30T16:09:13.758752+00:00",
+   "dismissedHint": false
   },
   {
    "id": "tca-75c8419613eb",
@@ -861,8 +885,8 @@
   "HTTP 200 len=142 https://docs.google.com/spreadsheets/d/1jCjEKiU8iKn5aLoVkl1PLQI9H-kzmLx_BIngiMZz4OA/export?format=csv",
   "HTTP 403 len=5913 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/",
   "FETCH FAIL HTTPError https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/",
-  "HTTP 200 len=3056555 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/",
-  "tca feed page 1: 74 items, kept 41",
+  "HTTP 200 len=3098101 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/",
+  "tca feed page 1: 75 items, kept 43",
   "HTTP 404 len=1285 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/?paged=2",
   "FETCH FAIL HTTPError https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/?paged=2",
   "HTTP 403 len=6076 https://topclassactions.com/wp-json/wp/v2/posts?search=Doordash&per_page=30&_fields=title,link,content,date",
@@ -870,7 +894,7 @@
   "wp-api blocked on first vendor; skipping the rest",
   "HTTP 403 len=5759 https://topclassactions.com/sitemap_index.xml",
   "FETCH FAIL HTTPError https://topclassactions.com/sitemap_index.xml",
-  "HTTP 200 len=807712 https://www.classaction.org/settlements",
+  "HTTP 200 len=807109 https://www.classaction.org/settlements",
   "cao anchors: 1, samples: ['List of Closed Settlements']"
  ]
 }
