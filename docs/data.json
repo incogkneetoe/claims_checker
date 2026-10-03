@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-02T16:01:11.043998+00:00",
+ "generated": "2026-10-03T14:27:51.797440+00:00",
  "vendors": [
   "Doordash",
   "Uber eats",
@@ -19,6 +19,28 @@
  ],
  "settlements": [
   {
+   "id": "tca-98e5ef746511",
+   "title": "$3.12M Finastra data breach class action settlement",
+   "description": "(Photo Credit: Digineer Station/Shutterstock) Finastra Technology Inc. agreed to pay $3.12 million to resolve a nationwide class action lawsuit alleging it failed to prevent an October 2024 data breach. The Finastra sett",
+   "deadline": "2026-11-13",
+   "payout": "$3.12M",
+   "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/3-12m-finastra-data-breach-class-action-settlement/",
+   "source": "Top Class Actions",
+   "vendorMatch": false,
+   "firstSeen": "2026-10-03T14:27:51.797440+00:00"
+  },
+  {
+   "id": "tca-5a7780fcbf00",
+   "title": "$3.5M MDLive data privacy class action settlement",
+   "description": "(Photo Credit: Nan_Got/Shutterstock) Evernorth Health Inc. and MDLive Inc. agreed to pay up to $3.5 million to resolve a class action lawsuit claiming they shared the sensitive information of MDLive website users nationw",
+   "deadline": "2026-11-16",
+   "payout": "$3.5M",
+   "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/3-5m-mdlive-data-privacy-class-action-settlement/",
+   "source": "Top Class Actions",
+   "vendorMatch": false,
+   "firstSeen": "2026-10-03T14:27:51.797440+00:00"
+  },
+  {
    "id": "tca-c3b53fb6a69f",
    "title": "Labcorp web tracking class action settlement",
    "description": "(Photo Credit: tadamichi/Shutterstock) Laboratory Corp. of America (Labcorp) agreed to a class action settlement to resolve claims it violated California and Pennsylvania wiretapping laws by tracking website visitors. Th",
@@ -27,7 +49,8 @@
    "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/labcorp-web-tracking-class-action-settlement/",
    "source": "Top Class Actions",
    "vendorMatch": false,
-   "firstSeen": "2026-10-02T16:01:11.043998+00:00"
+   "firstSeen": "2026-10-02T16:01:11.043998+00:00",
+   "dismissedHint": false
   },
   {
    "id": "tca-638e3f04ecc2",
@@ -38,7 +61,8 @@
    "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/20-5m-cvs-digital-privacy-class-action-settlement/",
    "source": "Top Class Actions",
    "vendorMatch": false,
-   "firstSeen": "2026-10-02T16:01:11.043998+00:00"
+   "firstSeen": "2026-10-02T16:01:11.043998+00:00",
+   "dismissedHint": false
   },
   {
    "id": "tca-e852225c9bcb",
@@ -909,8 +933,8 @@
   "HTTP 200 len=142 https://docs.google.com/spreadsheets/d/1jCjEKiU8iKn5aLoVkl1PLQI9H-kzmLx_BIngiMZz4OA/export?format=csv",
   "HTTP 403 len=5913 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/",
   "FETCH FAIL HTTPError https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/",
-  "HTTP 200 len=3094461 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/",
-  "tca feed page 1: 75 items, kept 44",
+  "HTTP 200 len=3135380 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/",
+  "tca feed page 1: 76 items, kept 44",
   "HTTP 404 len=1285 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/?paged=2",
   "FETCH FAIL HTTPError https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/?paged=2",
   "HTTP 403 len=6076 https://topclassactions.com/wp-json/wp/v2/posts?search=Doordash&per_page=30&_fields=title,link,content,date",
