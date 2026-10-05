@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-04T15:01:47.063964+00:00",
+ "generated": "2026-10-05T18:57:16.538979+00:00",
  "vendors": [
   "Doordash",
   "Uber eats",
@@ -19,6 +19,17 @@
  ],
  "settlements": [
   {
+   "id": "tca-8f81bd221039",
+   "title": "$309.5M Amazon return policy class action settlement",
+   "description": "(Photo Credit: Kmpzzz/Shutterstock) Amazon agreed to a $309.5 million class action settlement to resolve claims that it failed to properly refund consumers nationwide for products returned after being purchased through A",
+   "deadline": "2026-12-01",
+   "payout": "$309.5M",
+   "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/309-5m-amazon-return-policy-class-action-settlement/",
+   "source": "Top Class Actions",
+   "vendorMatch": false,
+   "firstSeen": "2026-10-05T18:57:16.538979+00:00"
+  },
+  {
    "id": "tca-c8af61dc02ca",
    "title": "$30M Equifax hard inquiry dispute class action settlement",
    "description": "(Photo Credit: Alexander Supertramp/Shutterstock) Equifax agreed to pay $30 million to resolve a class action lawsuit claiming it failed to properly investigate disputes of hard inquiries on the credit reports of consume",
@@ -27,7 +38,8 @@
    "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/30m-equifax-hard-inquiry-dispute-class-action-settlement/",
    "source": "Top Class Actions",
    "vendorMatch": false,
-   "firstSeen": "2026-10-04T15:01:47.063964+00:00"
+   "firstSeen": "2026-10-04T15:01:47.063964+00:00",
+   "dismissedHint": false
   },
   {
    "id": "tca-98e5ef746511",
@@ -946,8 +958,8 @@
   "HTTP 200 len=142 https://docs.google.com/spreadsheets/d/1jCjEKiU8iKn5aLoVkl1PLQI9H-kzmLx_BIngiMZz4OA/export?format=csv",
   "HTTP 403 len=5913 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/",
   "FETCH FAIL HTTPError https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/",
-  "HTTP 200 len=3178939 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/",
-  "tca feed page 1: 77 items, kept 45",
+  "HTTP 200 len=3223815 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/",
+  "tca feed page 1: 78 items, kept 45",
   "HTTP 404 len=1285 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/?paged=2",
   "FETCH FAIL HTTPError https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/?paged=2",
   "HTTP 403 len=6076 https://topclassactions.com/wp-json/wp/v2/posts?search=Doordash&per_page=30&_fields=title,link,content,date",
@@ -955,7 +967,7 @@
   "wp-api blocked on first vendor; skipping the rest",
   "HTTP 403 len=5759 https://topclassactions.com/sitemap_index.xml",
   "FETCH FAIL HTTPError https://topclassactions.com/sitemap_index.xml",
-  "HTTP 200 len=807109 https://www.classaction.org/settlements",
+  "HTTP 200 len=806187 https://www.classaction.org/settlements",
   "cao anchors: 1, samples: ['List of Closed Settlements']"
  ]
 }
