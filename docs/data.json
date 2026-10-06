@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-05T18:57:16.538979+00:00",
+ "generated": "2026-10-06T16:22:45.217156+00:00",
  "vendors": [
   "Doordash",
   "Uber eats",
@@ -27,7 +27,8 @@
    "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/309-5m-amazon-return-policy-class-action-settlement/",
    "source": "Top Class Actions",
    "vendorMatch": false,
-   "firstSeen": "2026-10-05T18:57:16.538979+00:00"
+   "firstSeen": "2026-10-05T18:57:16.538979+00:00",
+   "dismissedHint": false
   },
   {
    "id": "tca-c8af61dc02ca",
@@ -958,8 +959,8 @@
   "HTTP 200 len=142 https://docs.google.com/spreadsheets/d/1jCjEKiU8iKn5aLoVkl1PLQI9H-kzmLx_BIngiMZz4OA/export?format=csv",
   "HTTP 403 len=5913 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/",
   "FETCH FAIL HTTPError https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/",
-  "HTTP 200 len=3223815 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/",
-  "tca feed page 1: 78 items, kept 45",
+  "HTTP 200 len=3023786 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/",
+  "tca feed page 1: 73 items, kept 41",
   "HTTP 404 len=1285 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/?paged=2",
   "FETCH FAIL HTTPError https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/?paged=2",
   "HTTP 403 len=6076 https://topclassactions.com/wp-json/wp/v2/posts?search=Doordash&per_page=30&_fields=title,link,content,date",
@@ -967,7 +968,7 @@
   "wp-api blocked on first vendor; skipping the rest",
   "HTTP 403 len=5759 https://topclassactions.com/sitemap_index.xml",
   "FETCH FAIL HTTPError https://topclassactions.com/sitemap_index.xml",
-  "HTTP 200 len=806187 https://www.classaction.org/settlements",
+  "HTTP 200 len=800770 https://www.classaction.org/settlements",
   "cao anchors: 1, samples: ['List of Closed Settlements']"
  ]
 }
