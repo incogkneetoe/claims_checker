@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-09T16:42:03.342616+00:00",
+ "generated": "2026-10-10T15:37:58.775747+00:00",
  "vendors": [
   "Doordash",
   "Uber eats",
@@ -19,6 +19,17 @@
  ],
  "settlements": [
   {
+   "id": "tca-e285640d56a9",
+   "title": "$4.7M Neutrogena Skin360 BIPA violation class action settlement",
+   "description": "(Photo Credit: ShotPrime Studio/Shutterstock) Johnson &amp; Johnson agreed to a $4.7 million class action settlement to resolve claims that it violated Illinois privacy laws by collecting biometric data from its Skin360 ",
+   "deadline": "2026-11-10",
+   "payout": "$4.7M",
+   "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/4-7m-neutrogena-skin360-bipa-violation-class-action-settlement/",
+   "source": "Top Class Actions",
+   "vendorMatch": false,
+   "firstSeen": "2026-10-10T15:37:58.775747+00:00"
+  },
+  {
    "id": "tca-f684d46d86e0",
    "title": "$250M Apple Siri false advertising class action settlement",
    "description": "(Photo Credit: Bestravelvideo/Shutterstock) Apple Inc. agreed to a $250 million class action settlement to resolve claims that iPhone 15 and 16 series smartphones were not equipped with the promised Siri features. The iP",
@@ -27,7 +38,8 @@
    "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/250m-apple-siri-false-advertising-class-action-settlement/",
    "source": "Top Class Actions",
    "vendorMatch": false,
-   "firstSeen": "2026-10-09T16:42:03.342616+00:00"
+   "firstSeen": "2026-10-09T16:42:03.342616+00:00",
+   "dismissedHint": false
   },
   {
    "id": "tca-5e60da839b6f",
@@ -1006,8 +1018,8 @@
   "HTTP 200 len=142 https://docs.google.com/spreadsheets/d/1jCjEKiU8iKn5aLoVkl1PLQI9H-kzmLx_BIngiMZz4OA/export?format=csv",
   "HTTP 403 len=5913 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/",
   "FETCH FAIL HTTPError https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/",
-  "HTTP 200 len=3108748 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/",
-  "tca feed page 1: 75 items, kept 39",
+  "HTTP 200 len=3150067 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/",
+  "tca feed page 1: 76 items, kept 40",
   "HTTP 404 len=1285 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/?paged=2",
   "FETCH FAIL HTTPError https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/?paged=2",
   "HTTP 403 len=6076 https://topclassactions.com/wp-json/wp/v2/posts?search=Doordash&per_page=30&_fields=title,link,content,date",
