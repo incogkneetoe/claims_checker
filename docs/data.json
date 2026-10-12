@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-11T16:02:48.649580+00:00",
+ "generated": "2026-10-12T19:29:54.574032+00:00",
  "vendors": [
   "Doordash",
   "Uber eats",
@@ -18,6 +18,28 @@
   "Whole Foods"
  ],
  "settlements": [
+  {
+   "id": "tca-3559e6c31eb5",
+   "title": "$9M Dr. Squatch soap false advertising class action settlement",
+   "description": "(Photo Credit: Oliko Volodina/Shutterstock) Dr. Squatch agreed to pay $9 million as part of a class action settlement to resolve claims that it falsely advertised its products as \u201cnatural\u201d despite containing synthetic in",
+   "deadline": "2026-10-13",
+   "payout": "$9M",
+   "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/9m-dr-squatch-soap-false-advertising-class-action-settlement/",
+   "source": "Top Class Actions",
+   "vendorMatch": false,
+   "firstSeen": "2026-10-12T19:29:54.574032+00:00"
+  },
+  {
+   "id": "tca-148ba27d36fc",
+   "title": "Carter Credit Union data breach class action settlement",
+   "description": "(Photo Credit: Digineer Station/Shutterstock) Carter Credit Union agreed to a class action settlement to resolve claims that it failed to prevent a 2025 data breach that compromised members\u2019 sensitive information. The Ca",
+   "deadline": "2026-10-20",
+   "payout": "$2,500",
+   "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/carter-credit-union-data-breach-class-action-settlement/",
+   "source": "Top Class Actions",
+   "vendorMatch": false,
+   "firstSeen": "2026-10-12T19:29:54.574032+00:00"
+  },
   {
    "id": "tca-e285640d56a9",
    "title": "$4.7M Neutrogena Skin360 BIPA violation class action settlement",
@@ -1017,16 +1039,16 @@
  ],
  "debug": [
   "HTTP 200 len=142 https://docs.google.com/spreadsheets/d/1jCjEKiU8iKn5aLoVkl1PLQI9H-kzmLx_BIngiMZz4OA/export?format=csv",
-  "HTTP 403 len=5913 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/",
+  "HTTP 403 len=5902 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/",
   "FETCH FAIL HTTPError https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/",
-  "HTTP 200 len=3067881 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/",
-  "tca feed page 1: 74 items, kept 40",
+  "HTTP 200 len=3147259 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/",
+  "tca feed page 1: 76 items, kept 42",
   "HTTP 404 len=1285 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/?paged=2",
   "FETCH FAIL HTTPError https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/?paged=2",
-  "HTTP 403 len=6076 https://topclassactions.com/wp-json/wp/v2/posts?search=Doordash&per_page=30&_fields=title,link,content,date",
+  "HTTP 403 len=6065 https://topclassactions.com/wp-json/wp/v2/posts?search=Doordash&per_page=30&_fields=title,link,content,date",
   "FETCH FAIL HTTPError https://topclassactions.com/wp-json/wp/v2/posts?search=Doordash&per_page=30&_fields=title,link,content,date",
   "wp-api blocked on first vendor; skipping the rest",
-  "HTTP 403 len=5759 https://topclassactions.com/sitemap_index.xml",
+  "HTTP 403 len=5748 https://topclassactions.com/sitemap_index.xml",
   "FETCH FAIL HTTPError https://topclassactions.com/sitemap_index.xml",
   "HTTP 200 len=800770 https://www.classaction.org/settlements",
   "cao anchors: 1, samples: ['List of Closed Settlements']"
