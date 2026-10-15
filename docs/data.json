@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-14T14:46:15.290258+00:00",
+ "generated": "2026-10-15T14:32:09.090416+00:00",
  "vendors": [
   "Doordash",
   "Uber eats",
@@ -19,6 +19,28 @@
  ],
  "settlements": [
   {
+   "id": "tca-2604a674e26b",
+   "title": "$5M Kelly & Associates Insurance Group data breach class action settlement",
+   "description": "(Photo Credit: FOTO Eak/shutterstock) Kelly &amp; Associates Insurance Group agreed to a $5 million class action settlement to resolve claims it failed to prevent a 2024 data breach that compromised sensitive consumer in",
+   "deadline": "2026-11-27",
+   "payout": "$5M",
+   "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/5m-kelly-associates-insurance-group-data-breach-class-action-settlement/",
+   "source": "Top Class Actions",
+   "vendorMatch": false,
+   "firstSeen": "2026-10-15T14:32:09.090416+00:00"
+  },
+  {
+   "id": "tca-1829666b0b37",
+   "title": "$8.75M University of Phoenix website tracking class action settlement",
+   "description": "(Photo Credit: PeopleImages/Shutterstock) The University of Phoenix has agreed to pay $8.75 million to resolve a class action lawsuit claiming it violated federal and Illinois privacy laws by sharing student information ",
+   "deadline": "2026-11-05",
+   "payout": "$8.75M",
+   "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/8-75m-university-of-phoenix-website-tracking-class-action-settlement/",
+   "source": "Top Class Actions",
+   "vendorMatch": false,
+   "firstSeen": "2026-10-15T14:32:09.090416+00:00"
+  },
+  {
    "id": "tca-08e5ffd3225d",
    "title": "$6.5M Educational Computer Systems data breach class action settlement",
    "description": "(Photo Credit: Digineer Station/Shutterstock) Educational Computer Systems Inc. (ECSI) has agreed to a $6.5 million class action settlement to resolve claims it failed to protect consumers from a data breach. The Educati",
@@ -27,7 +49,8 @@
    "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/6-5m-educational-computer-systems-data-breach-class-action-settlement/",
    "source": "Top Class Actions",
    "vendorMatch": false,
-   "firstSeen": "2026-10-14T14:46:15.290258+00:00"
+   "firstSeen": "2026-10-14T14:46:15.290258+00:00",
+   "dismissedHint": false
   },
   {
    "id": "tca-c808846f66d7",
@@ -654,18 +677,6 @@
    "dismissedHint": false
   },
   {
-   "id": "tca-bb7bbb779eff",
-   "title": "$220,000 Mount Sinai Medical Center data breach class action settlement",
-   "description": "(Photo Credit: Digineer Station/Shutterstock) Mount Sinai Medical Center of Florida has agreed to a $220,000 class action settlement to resolve claims it disclosed patient data to third parties through website tracking. ",
-   "deadline": "2026-09-14",
-   "payout": "$220,000 M",
-   "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/220000-mount-sinai-medical-center-data-breach-class-action-settlement/",
-   "source": "Top Class Actions",
-   "vendorMatch": false,
-   "firstSeen": "2026-09-13T15:16:07.919612+00:00",
-   "dismissedHint": false
-  },
-  {
    "id": "tca-6f9ead4ff110",
    "title": "Tesla idle fees class action settlement",
    "description": "(Photo Credit: Scharfsinn/Shutterstock) Tesla has agreed to a class action settlement to resolve claims it charged \u201cidle fees\u201d to customers who purchased vehicles with free lifetime Supercharging. The Tesla settlement be",
@@ -834,18 +845,6 @@
    "dismissedHint": false
   },
   {
-   "id": "tca-90676b83ba56",
-   "title": "$600K Crossroads Trading data breach class action settlement",
-   "description": "(Photo Credit: Summit Art Creations/Shutterstock) Crossroads Trading agreed to a $600,000 class action settlement to resolve claims it failed to prevent a 2025 data breach that compromised employee and customer informati",
-   "deadline": "2026-09-14",
-   "payout": "$600",
-   "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/600k-crossroads-trading-data-breach-class-action-settlement/",
-   "source": "Top Class Actions",
-   "vendorMatch": false,
-   "firstSeen": "2026-09-13T14:16:51.122560+00:00",
-   "dismissedHint": false
-  },
-  {
    "id": "tca-931b5a74f6d5",
    "title": "Volkswagen Atlas water pump class action settlement",
    "description": "(Photo Credit: Palitsyn Evgenii/Shutterstock) Volkswagen has agreed to a class action settlement to resolve claims that certain Atlas and Atlas Cross Sport vehicles are equipped with a defective engine water pump. The Vo",
@@ -924,18 +923,6 @@
    "deadline": null,
    "payout": "$17.5M",
    "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/17-5m-700credit-data-breach-class-action-settlement/",
-   "source": "Top Class Actions",
-   "vendorMatch": false,
-   "firstSeen": "2026-09-13T14:16:51.122560+00:00",
-   "dismissedHint": false
-  },
-  {
-   "id": "tca-ef77ccdc61d7",
-   "title": "$44M Chantix nitrosamine class action settlement",
-   "description": "(Photo Credit: Sabphoto/Shutterstock) Pfizer has agreed to a $44 million class action settlement to resolve claims that its Chantix smoking cessation drug was contaminated with a nitrosamine, a cancer-causing agent. The ",
-   "deadline": "2026-09-14",
-   "payout": "$44M",
-   "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/44m-chantix-nitrosamine-class-action-settlement/",
    "source": "Top Class Actions",
    "vendorMatch": false,
    "firstSeen": "2026-09-13T14:16:51.122560+00:00",
@@ -1066,8 +1053,8 @@
   "HTTP 200 len=142 https://docs.google.com/spreadsheets/d/1jCjEKiU8iKn5aLoVkl1PLQI9H-kzmLx_BIngiMZz4OA/export?format=csv",
   "HTTP 403 len=5902 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/",
   "FETCH FAIL HTTPError https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/",
-  "HTTP 200 len=3108070 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/",
-  "tca feed page 1: 75 items, kept 41",
+  "HTTP 200 len=3190868 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/",
+  "tca feed page 1: 77 items, kept 43",
   "HTTP 404 len=1285 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/?paged=2",
   "FETCH FAIL HTTPError https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/?paged=2",
   "HTTP 403 len=6065 https://topclassactions.com/wp-json/wp/v2/posts?search=Doordash&per_page=30&_fields=title,link,content,date",
@@ -1075,7 +1062,7 @@
   "wp-api blocked on first vendor; skipping the rest",
   "HTTP 403 len=5748 https://topclassactions.com/sitemap_index.xml",
   "FETCH FAIL HTTPError https://topclassactions.com/sitemap_index.xml",
-  "HTTP 200 len=756260 https://www.classaction.org/settlements",
+  "HTTP 200 len=732472 https://www.classaction.org/settlements",
   "cao anchors: 1, samples: ['List of Closed Settlements']"
  ]
 }
