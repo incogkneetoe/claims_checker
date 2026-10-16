@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-15T14:32:09.090416+00:00",
+ "generated": "2026-10-16T14:24:08.082624+00:00",
  "vendors": [
   "Doordash",
   "Uber eats",
@@ -19,6 +19,17 @@
  ],
  "settlements": [
   {
+   "id": "tca-efa72b134a47",
+   "title": "$100M Equifax FCRA violations class action settlement",
+   "description": "(Photo Credit: A9 STUDIO/Shutterstock) Equifax has agreed to a $100 million class action settlement to resolve claims it provided inaccurate credit information about millions of Americans applying for loans, insurance or",
+   "deadline": "2026-11-27",
+   "payout": "$100M",
+   "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/100m-equifax-fcra-violations-class-action-settlement/",
+   "source": "Top Class Actions",
+   "vendorMatch": false,
+   "firstSeen": "2026-10-16T14:24:08.082624+00:00"
+  },
+  {
    "id": "tca-2604a674e26b",
    "title": "$5M Kelly & Associates Insurance Group data breach class action settlement",
    "description": "(Photo Credit: FOTO Eak/shutterstock) Kelly &amp; Associates Insurance Group agreed to a $5 million class action settlement to resolve claims it failed to prevent a 2024 data breach that compromised sensitive consumer in",
@@ -27,7 +38,8 @@
    "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/5m-kelly-associates-insurance-group-data-breach-class-action-settlement/",
    "source": "Top Class Actions",
    "vendorMatch": false,
-   "firstSeen": "2026-10-15T14:32:09.090416+00:00"
+   "firstSeen": "2026-10-15T14:32:09.090416+00:00",
+   "dismissedHint": false
   },
   {
    "id": "tca-1829666b0b37",
@@ -38,7 +50,8 @@
    "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/8-75m-university-of-phoenix-website-tracking-class-action-settlement/",
    "source": "Top Class Actions",
    "vendorMatch": false,
-   "firstSeen": "2026-10-15T14:32:09.090416+00:00"
+   "firstSeen": "2026-10-15T14:32:09.090416+00:00",
+   "dismissedHint": false
   },
   {
    "id": "tca-08e5ffd3225d",
@@ -737,18 +750,6 @@
    "dismissedHint": false
   },
   {
-   "id": "tca-f1bc4ca341ff",
-   "title": "$1.2M Tift Regional Health System data breach class action settlement",
-   "description": "(Photo Credit: Taris Tonsa/Shutterstock) Tift Regional Health System Inc. and Southwell Inc. agreed to a $1.2 million class action settlement to resolve claims that they failed to prevent a 2022 data breach that compromi",
-   "deadline": "2026-09-15",
-   "payout": "$1.2M",
-   "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/1-2m-tift-regional-health-system-data-breach-class-action-settlement/",
-   "source": "Top Class Actions",
-   "vendorMatch": false,
-   "firstSeen": "2026-09-13T14:16:51.122560+00:00",
-   "dismissedHint": false
-  },
-  {
    "id": "tca-de2ae71f08e4",
    "title": "Community Dental Care data breach class action settlement",
    "description": "(Photo Credit: Digineer Station/Shutterstock) Community Dental Care agreed to a class action settlement to resolve claims that it failed to prevent a 2024 data breach that compromised sensitive patient information. The C",
@@ -1053,8 +1054,8 @@
   "HTTP 200 len=142 https://docs.google.com/spreadsheets/d/1jCjEKiU8iKn5aLoVkl1PLQI9H-kzmLx_BIngiMZz4OA/export?format=csv",
   "HTTP 403 len=5902 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/",
   "FETCH FAIL HTTPError https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/",
-  "HTTP 200 len=3190868 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/",
-  "tca feed page 1: 77 items, kept 43",
+  "HTTP 200 len=3146957 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/",
+  "tca feed page 1: 76 items, kept 44",
   "HTTP 404 len=1285 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/?paged=2",
   "FETCH FAIL HTTPError https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/?paged=2",
   "HTTP 403 len=6065 https://topclassactions.com/wp-json/wp/v2/posts?search=Doordash&per_page=30&_fields=title,link,content,date",
