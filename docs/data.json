@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-16T14:24:08.082624+00:00",
+ "generated": "2026-10-17T13:21:00.857575+00:00",
  "vendors": [
   "Doordash",
   "Uber eats",
@@ -19,6 +19,17 @@
  ],
  "settlements": [
   {
+   "id": "tca-09e77baa035b",
+   "title": "$17M Kroger prescription prices class action settlement",
+   "description": "(Photo Credit: PeopleImages/Shutterstock) Kroger agreed to a $17 million class action settlement to resolve claims it charged unfair prices for prescription drugs. The Kroger settlement benefits consumers who paid for on",
+   "deadline": "2026-10-22",
+   "payout": "$17M",
+   "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/17m-kroger-prescription-prices-class-action-settlement/",
+   "source": "Top Class Actions",
+   "vendorMatch": false,
+   "firstSeen": "2026-10-17T13:21:00.857575+00:00"
+  },
+  {
    "id": "tca-efa72b134a47",
    "title": "$100M Equifax FCRA violations class action settlement",
    "description": "(Photo Credit: A9 STUDIO/Shutterstock) Equifax has agreed to a $100 million class action settlement to resolve claims it provided inaccurate credit information about millions of Americans applying for loans, insurance or",
@@ -27,7 +38,8 @@
    "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/100m-equifax-fcra-violations-class-action-settlement/",
    "source": "Top Class Actions",
    "vendorMatch": false,
-   "firstSeen": "2026-10-16T14:24:08.082624+00:00"
+   "firstSeen": "2026-10-16T14:24:08.082624+00:00",
+   "dismissedHint": false
   },
   {
    "id": "tca-2604a674e26b",
@@ -1054,8 +1066,8 @@
   "HTTP 200 len=142 https://docs.google.com/spreadsheets/d/1jCjEKiU8iKn5aLoVkl1PLQI9H-kzmLx_BIngiMZz4OA/export?format=csv",
   "HTTP 403 len=5902 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/",
   "FETCH FAIL HTTPError https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/",
-  "HTTP 200 len=3146957 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/",
-  "tca feed page 1: 76 items, kept 44",
+  "HTTP 200 len=3187147 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/",
+  "tca feed page 1: 77 items, kept 44",
   "HTTP 404 len=1285 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/?paged=2",
   "FETCH FAIL HTTPError https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/?paged=2",
   "HTTP 403 len=6065 https://topclassactions.com/wp-json/wp/v2/posts?search=Doordash&per_page=30&_fields=title,link,content,date",
