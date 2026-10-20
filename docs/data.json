@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-19T16:41:55.945521+00:00",
+ "generated": "2026-10-20T14:33:57.682277+00:00",
  "vendors": [
   "Doordash",
   "Uber eats",
@@ -18,6 +18,28 @@
   "Whole Foods"
  ],
  "settlements": [
+  {
+   "id": "tca-6f2a0feec75e",
+   "title": "$2.25M Jefferson County Health Center data breach class action settlement",
+   "description": "(Photo Credit: Digineer Station/Shutterstock) Jefferson County Health Center agreed to a $2.25 million class action settlement to resolve claims it failed to prevent a 2022 data breach that compromised patient informatio",
+   "deadline": "2026-11-16",
+   "payout": "$2.25M",
+   "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/2-25m-jefferson-county-health-center-data-breach-class-action-settlement/",
+   "source": "Top Class Actions",
+   "vendorMatch": false,
+   "firstSeen": "2026-10-20T14:33:57.682277+00:00"
+  },
+  {
+   "id": "tca-7855ec63a5fe",
+   "title": "$21.75M Costa Del Mar sunglasses class action settlement",
+   "description": "(Photo Credit: New Africa/Shutterstock) Costa Del Mar agreed to a $21.75 million class action settlement to resolve claims it charged unfair fees to repair sunglasses despite promising to do so for a \u201cnominal fee.\u201d The C",
+   "deadline": "2027-01-19",
+   "payout": "$21.75M",
+   "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/21-75m-costa-del-mar-sunglasses-class-action-settlement/",
+   "source": "Top Class Actions",
+   "vendorMatch": false,
+   "firstSeen": "2026-10-20T14:33:57.682277+00:00"
+  },
   {
    "id": "tca-09e77baa035b",
    "title": "$17M Kroger prescription prices class action settlement",
@@ -1055,8 +1077,8 @@
   "HTTP 200 len=142 https://docs.google.com/spreadsheets/d/1jCjEKiU8iKn5aLoVkl1PLQI9H-kzmLx_BIngiMZz4OA/export?format=csv",
   "HTTP 403 len=5902 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/",
   "FETCH FAIL HTTPError https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/",
-  "HTTP 200 len=3187809 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/",
-  "tca feed page 1: 77 items, kept 44",
+  "HTTP 200 len=3026134 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/",
+  "tca feed page 1: 73 items, kept 40",
   "HTTP 404 len=1285 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/?paged=2",
   "FETCH FAIL HTTPError https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/?paged=2",
   "HTTP 403 len=6065 https://topclassactions.com/wp-json/wp/v2/posts?search=Doordash&per_page=30&_fields=title,link,content,date",
