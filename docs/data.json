@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-20T14:33:57.682277+00:00",
+ "generated": "2026-10-21T14:45:14.159053+00:00",
  "vendors": [
   "Doordash",
   "Uber eats",
@@ -19,6 +19,50 @@
  ],
  "settlements": [
   {
+   "id": "cao-b29bb9d0229b",
+   "title": "Charlotte Motor Speedway Landfill Class Action Settlement",
+   "description": "Charlotte Motor Speedway Landfill Class Action Settlement",
+   "deadline": null,
+   "payout": null,
+   "claimUrl": "https://lsclassaction.com/settlements/charlotte-motor-speedway-landfill/",
+   "source": "ClassAction.org",
+   "vendorMatch": false,
+   "firstSeen": "2026-10-21T14:45:14.159053+00:00"
+  },
+  {
+   "id": "cao-dd1f59bce543",
+   "title": "Rhode Island Bioenergy Facility Class Action Settlement",
+   "description": "Rhode Island Bioenergy Facility Class Action Settlement",
+   "deadline": null,
+   "payout": null,
+   "claimUrl": "https://lsclassaction.com/settlements/rhode-island-resource-recovery-class-action-settlement/",
+   "source": "ClassAction.org",
+   "vendorMatch": false,
+   "firstSeen": "2026-10-21T14:45:14.159053+00:00"
+  },
+  {
+   "id": "tca-5517685618f1",
+   "title": "$4.5M Aramark Capital One Arena venue fee class action settlement",
+   "description": "(Photo Credit: quiggyt4/Shutterstock) Aramark agreed to a $4.5 million class action settlement to resolve claims it charged an undisclosed venue fee at the Capital One Arena in Washington, D.C. The Aramark Capital One Ar",
+   "deadline": "2026-12-04",
+   "payout": "$4.5M",
+   "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/4-5m-aramark-capital-one-arena-venue-fee-class-action-settlement/",
+   "source": "Top Class Actions",
+   "vendorMatch": false,
+   "firstSeen": "2026-10-21T14:45:14.159053+00:00"
+  },
+  {
+   "id": "tca-43edbb58b7f4",
+   "title": "$4.28M Bank of America vacation pay class action settlement",
+   "description": "(Photo Credit: Ground Picture/Shutterstock) Bank of America has agreed to a $4.28 million class action settlement to resolve claims it failed to pay out vacation time to employees in California, Illinois and New York. Th",
+   "deadline": "2026-11-27",
+   "payout": "$4.28M",
+   "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/4-28m-bank-of-america-vacation-pay-class-action-settlement/",
+   "source": "Top Class Actions",
+   "vendorMatch": false,
+   "firstSeen": "2026-10-21T14:45:14.159053+00:00"
+  },
+  {
    "id": "tca-6f2a0feec75e",
    "title": "$2.25M Jefferson County Health Center data breach class action settlement",
    "description": "(Photo Credit: Digineer Station/Shutterstock) Jefferson County Health Center agreed to a $2.25 million class action settlement to resolve claims it failed to prevent a 2022 data breach that compromised patient informatio",
@@ -27,7 +71,8 @@
    "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/2-25m-jefferson-county-health-center-data-breach-class-action-settlement/",
    "source": "Top Class Actions",
    "vendorMatch": false,
-   "firstSeen": "2026-10-20T14:33:57.682277+00:00"
+   "firstSeen": "2026-10-20T14:33:57.682277+00:00",
+   "dismissedHint": false
   },
   {
    "id": "tca-7855ec63a5fe",
@@ -38,7 +83,8 @@
    "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/21-75m-costa-del-mar-sunglasses-class-action-settlement/",
    "source": "Top Class Actions",
    "vendorMatch": false,
-   "firstSeen": "2026-10-20T14:33:57.682277+00:00"
+   "firstSeen": "2026-10-20T14:33:57.682277+00:00",
+   "dismissedHint": false
   },
   {
    "id": "tca-09e77baa035b",
@@ -1077,8 +1123,8 @@
   "HTTP 200 len=142 https://docs.google.com/spreadsheets/d/1jCjEKiU8iKn5aLoVkl1PLQI9H-kzmLx_BIngiMZz4OA/export?format=csv",
   "HTTP 403 len=5902 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/",
   "FETCH FAIL HTTPError https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/",
-  "HTTP 200 len=3026134 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/",
-  "tca feed page 1: 73 items, kept 40",
+  "HTTP 200 len=3025017 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/",
+  "tca feed page 1: 73 items, kept 38",
   "HTTP 404 len=1285 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/?paged=2",
   "FETCH FAIL HTTPError https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/?paged=2",
   "HTTP 403 len=6065 https://topclassactions.com/wp-json/wp/v2/posts?search=Doordash&per_page=30&_fields=title,link,content,date",
@@ -1086,7 +1132,7 @@
   "wp-api blocked on first vendor; skipping the rest",
   "HTTP 403 len=5748 https://topclassactions.com/sitemap_index.xml",
   "FETCH FAIL HTTPError https://topclassactions.com/sitemap_index.xml",
-  "HTTP 200 len=732472 https://www.classaction.org/settlements",
-  "cao anchors: 1, samples: ['List of Closed Settlements']"
+  "HTTP 200 len=752890 https://www.classaction.org/settlements",
+  "cao anchors: 5, samples: ['Charlotte Motor Speedway Landfill Class ', 'Visit Official Settlement Website', 'Rhode Island Bioenergy Facility Class Ac', 'Visit Official Settlement Website', 'List of Closed Settlements']"
  ]
 }
