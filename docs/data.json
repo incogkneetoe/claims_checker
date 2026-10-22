@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-21T14:45:14.159053+00:00",
+ "generated": "2026-10-22T14:45:03.138121+00:00",
  "vendors": [
   "Doordash",
   "Uber eats",
@@ -19,6 +19,28 @@
  ],
  "settlements": [
   {
+   "id": "tca-2bfe14438a8f",
+   "title": "$3.84M Coast Dental TCPA violations class action settlement",
+   "description": "(Photo Credit: FabrikaSimf/Shutterstock) Coast Dental agreed to a $3.84 million class action settlement to resolve claims it violated the federal Telephone Consumer Protection Act (TCPA) with unsolicited phone calls and ",
+   "deadline": "2026-10-30",
+   "payout": "$3.84M",
+   "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/3-84m-coast-dental-tcpa-violations-class-action-settlement/",
+   "source": "Top Class Actions",
+   "vendorMatch": false,
+   "firstSeen": "2026-10-22T14:45:03.138121+00:00"
+  },
+  {
+   "id": "tca-2fb9a9a6e0f6",
+   "title": "$4.225M ViaPath data breach class action settlement",
+   "description": "(Photo Credit: Digineer Station/Shutterstock) Telmate, also known as ViaPath Technologies, has agreed to a $4.225 million class action settlement to resolve claims that it failed to prevent a 2020 data breach that compro",
+   "deadline": "2026-12-21",
+   "payout": "$4.225M",
+   "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/4-225m-viapath-data-breach-class-action-settlement/",
+   "source": "Top Class Actions",
+   "vendorMatch": false,
+   "firstSeen": "2026-10-22T14:45:03.138121+00:00"
+  },
+  {
    "id": "cao-b29bb9d0229b",
    "title": "Charlotte Motor Speedway Landfill Class Action Settlement",
    "description": "Charlotte Motor Speedway Landfill Class Action Settlement",
@@ -27,7 +49,8 @@
    "claimUrl": "https://lsclassaction.com/settlements/charlotte-motor-speedway-landfill/",
    "source": "ClassAction.org",
    "vendorMatch": false,
-   "firstSeen": "2026-10-21T14:45:14.159053+00:00"
+   "firstSeen": "2026-10-21T14:45:14.159053+00:00",
+   "dismissedHint": false
   },
   {
    "id": "cao-dd1f59bce543",
@@ -38,7 +61,8 @@
    "claimUrl": "https://lsclassaction.com/settlements/rhode-island-resource-recovery-class-action-settlement/",
    "source": "ClassAction.org",
    "vendorMatch": false,
-   "firstSeen": "2026-10-21T14:45:14.159053+00:00"
+   "firstSeen": "2026-10-21T14:45:14.159053+00:00",
+   "dismissedHint": false
   },
   {
    "id": "tca-5517685618f1",
@@ -49,7 +73,8 @@
    "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/4-5m-aramark-capital-one-arena-venue-fee-class-action-settlement/",
    "source": "Top Class Actions",
    "vendorMatch": false,
-   "firstSeen": "2026-10-21T14:45:14.159053+00:00"
+   "firstSeen": "2026-10-21T14:45:14.159053+00:00",
+   "dismissedHint": false
   },
   {
    "id": "tca-43edbb58b7f4",
@@ -60,7 +85,8 @@
    "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/4-28m-bank-of-america-vacation-pay-class-action-settlement/",
    "source": "Top Class Actions",
    "vendorMatch": false,
-   "firstSeen": "2026-10-21T14:45:14.159053+00:00"
+   "firstSeen": "2026-10-21T14:45:14.159053+00:00",
+   "dismissedHint": false
   },
   {
    "id": "tca-6f2a0feec75e",
@@ -675,18 +701,6 @@
    "dismissedHint": false
   },
   {
-   "id": "tca-073119b865c2",
-   "title": "$1.01M Sportsman\u2019s Guide data privacy class action settlement",
-   "description": "(Photo Credit: Lutsenko_Oleksandr/Shutterstock) Sportsman\u2019s Guide agreed to pay $1.015 million to resolve claims it shared firearm purchase information without consent. The Sportsman\u2019s Guide settlement benefits Pennsylva",
-   "deadline": "2026-09-21",
-   "payout": "$1.01M",
-   "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/1-01m-sportsmans-guide-data-privacy-class-action-settlement/",
-   "source": "Top Class Actions",
-   "vendorMatch": false,
-   "firstSeen": "2026-09-13T15:16:07.919612+00:00",
-   "dismissedHint": false
-  },
-  {
    "id": "tca-4b7ef788d328",
    "title": "$14.5M CRST Expedited minimum wage class action settlement",
    "description": "(Photo Credit: CK Foto/Shutterstock) CRST Expedited agreed to pay $14.5 million as part of a class action settlement to resolve claims it violated California labor laws by failing to pay truck drivers minimum wage and ot",
@@ -1123,8 +1137,8 @@
   "HTTP 200 len=142 https://docs.google.com/spreadsheets/d/1jCjEKiU8iKn5aLoVkl1PLQI9H-kzmLx_BIngiMZz4OA/export?format=csv",
   "HTTP 403 len=5902 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/",
   "FETCH FAIL HTTPError https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/",
-  "HTTP 200 len=3025017 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/",
-  "tca feed page 1: 73 items, kept 38",
+  "HTTP 200 len=3105416 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/",
+  "tca feed page 1: 75 items, kept 40",
   "HTTP 404 len=1285 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/?paged=2",
   "FETCH FAIL HTTPError https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/?paged=2",
   "HTTP 403 len=6065 https://topclassactions.com/wp-json/wp/v2/posts?search=Doordash&per_page=30&_fields=title,link,content,date",
@@ -1132,7 +1146,7 @@
   "wp-api blocked on first vendor; skipping the rest",
   "HTTP 403 len=5748 https://topclassactions.com/sitemap_index.xml",
   "FETCH FAIL HTTPError https://topclassactions.com/sitemap_index.xml",
-  "HTTP 200 len=752890 https://www.classaction.org/settlements",
+  "HTTP 200 len=752713 https://www.classaction.org/settlements",
   "cao anchors: 5, samples: ['Charlotte Motor Speedway Landfill Class ', 'Visit Official Settlement Website', 'Rhode Island Bioenergy Facility Class Ac', 'Visit Official Settlement Website', 'List of Closed Settlements']"
  ]
 }
