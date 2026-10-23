@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-22T14:45:03.138121+00:00",
+ "generated": "2026-10-23T14:31:47.972620+00:00",
  "vendors": [
   "Doordash",
   "Uber eats",
@@ -19,6 +19,39 @@
  ],
  "settlements": [
   {
+   "id": "tca-b00b07c47085",
+   "title": "$6.4M American Medical Collection Agency data breach class action settlement",
+   "description": "(Photo Credit: Digineer Station/Shutterstock) Sonic Healthcare, Aurora Diagnostics, Clinical Pathology Laboratories and Austin Pathology Associates agreed to a $6.4 million class action settlement to resolve claims surro",
+   "deadline": "2026-12-03",
+   "payout": "$6.4M",
+   "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/6-4m-american-medical-collection-agency-data-breach-class-action-settlement/",
+   "source": "Top Class Actions",
+   "vendorMatch": false,
+   "firstSeen": "2026-10-23T14:31:47.972620+00:00"
+  },
+  {
+   "id": "tca-d55392edc319",
+   "title": "$53M Harvard morgue class action settlement",
+   "description": "(Photo Credit: huseyinturk_photograph/Shutterstock) Harvard University has agreed to pay $53 million in a class action settlement to resolve claims that it failed to safeguard human remains donated to its anatomical gift",
+   "deadline": "2026-11-16",
+   "payout": "$53M",
+   "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/53m-harvard-morgue-class-action-settlement/",
+   "source": "Top Class Actions",
+   "vendorMatch": false,
+   "firstSeen": "2026-10-23T14:31:47.972620+00:00"
+  },
+  {
+   "id": "tca-d8eb6dc5e572",
+   "title": "$7M Hughes Federal Credit Union repossession notification class action settlement",
+   "description": "(Photo Credit: Virrage Images/Shutterstock) Hughes Federal Credit Union (HFCU) has agreed to a $7 million class action settlement to resolve claims it violated Arizona law by failing to provide proper notices to vehicle ",
+   "deadline": "2026-11-20",
+   "payout": "$7M",
+   "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/7m-hughes-federal-credit-union-repossession-notification-class-action-settlement/",
+   "source": "Top Class Actions",
+   "vendorMatch": false,
+   "firstSeen": "2026-10-23T14:31:47.972620+00:00"
+  },
+  {
    "id": "tca-2bfe14438a8f",
    "title": "$3.84M Coast Dental TCPA violations class action settlement",
    "description": "(Photo Credit: FabrikaSimf/Shutterstock) Coast Dental agreed to a $3.84 million class action settlement to resolve claims it violated the federal Telephone Consumer Protection Act (TCPA) with unsolicited phone calls and ",
@@ -27,7 +60,8 @@
    "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/3-84m-coast-dental-tcpa-violations-class-action-settlement/",
    "source": "Top Class Actions",
    "vendorMatch": false,
-   "firstSeen": "2026-10-22T14:45:03.138121+00:00"
+   "firstSeen": "2026-10-22T14:45:03.138121+00:00",
+   "dismissedHint": false
   },
   {
    "id": "tca-2fb9a9a6e0f6",
@@ -38,7 +72,8 @@
    "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/4-225m-viapath-data-breach-class-action-settlement/",
    "source": "Top Class Actions",
    "vendorMatch": false,
-   "firstSeen": "2026-10-22T14:45:03.138121+00:00"
+   "firstSeen": "2026-10-22T14:45:03.138121+00:00",
+   "dismissedHint": false
   },
   {
    "id": "cao-b29bb9d0229b",
@@ -869,18 +904,6 @@
    "dismissedHint": false
   },
   {
-   "id": "tca-72386ba4021e",
-   "title": "$5.25M Americold data breach class action settlement",
-   "description": "(Photo Credit: maung100966/Shutterstock) Americold has agreed to pay $5.25 million to resolve claims that it failed to prevent two data breaches that occurred in 2020 and 2023. The Americold settlement benefits individua",
-   "deadline": "2026-09-22",
-   "payout": "$5.25M",
-   "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/5-25m-americold-data-breach-class-action-settlement/",
-   "source": "Top Class Actions",
-   "vendorMatch": false,
-   "firstSeen": "2026-09-13T14:16:51.122560+00:00",
-   "dismissedHint": false
-  },
-  {
    "id": "tca-f1f9fcdfd79c",
    "title": "$9.25M Penn Medicine pixel tracking class action settlement",
    "description": "(Photo Credit: Tero Vesalainen/Shutterstock) The University of Pennsylvania Health System (UPHS) agreed to a $9.25 million class action settlement to resolve claims it used tracking pixels on its website to share patient",
@@ -1137,8 +1160,8 @@
   "HTTP 200 len=142 https://docs.google.com/spreadsheets/d/1jCjEKiU8iKn5aLoVkl1PLQI9H-kzmLx_BIngiMZz4OA/export?format=csv",
   "HTTP 403 len=5902 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/",
   "FETCH FAIL HTTPError https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/",
-  "HTTP 200 len=3105416 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/",
-  "tca feed page 1: 75 items, kept 40",
+  "HTTP 200 len=3107056 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/",
+  "tca feed page 1: 74 items, kept 42",
   "HTTP 404 len=1285 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/?paged=2",
   "FETCH FAIL HTTPError https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/?paged=2",
   "HTTP 403 len=6065 https://topclassactions.com/wp-json/wp/v2/posts?search=Doordash&per_page=30&_fields=title,link,content,date",
