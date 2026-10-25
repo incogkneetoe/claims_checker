@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-24T13:43:15.914229+00:00",
+ "generated": "2026-10-25T14:00:15.886024+00:00",
  "vendors": [
   "Doordash",
   "Uber eats",
@@ -27,7 +27,8 @@
    "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/325k-starbucks-cobra-notice-class-action-settlement/",
    "source": "Top Class Actions",
    "vendorMatch": false,
-   "firstSeen": "2026-10-24T13:43:15.914229+00:00"
+   "firstSeen": "2026-10-24T13:43:15.914229+00:00",
+   "dismissedHint": false
   },
   {
    "id": "tca-10aa38ed70e3",
@@ -38,7 +39,8 @@
    "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/850k-thinkware-dashcam-class-action-settlement/",
    "source": "Top Class Actions",
    "vendorMatch": false,
-   "firstSeen": "2026-10-24T13:43:15.914229+00:00"
+   "firstSeen": "2026-10-24T13:43:15.914229+00:00",
+   "dismissedHint": false
   },
   {
    "id": "tca-b00b07c47085",
@@ -881,18 +883,6 @@
    "dismissedHint": false
   },
   {
-   "id": "tca-de2ae71f08e4",
-   "title": "Community Dental Care data breach class action settlement",
-   "description": "(Photo Credit: Digineer Station/Shutterstock) Community Dental Care agreed to a class action settlement to resolve claims that it failed to prevent a 2024 data breach that compromised sensitive patient information. The C",
-   "deadline": "2026-09-24",
-   "payout": "$5,000",
-   "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/community-dental-care-data-breach-class-action-settlement/",
-   "source": "Top Class Actions",
-   "vendorMatch": false,
-   "firstSeen": "2026-09-13T14:16:51.122560+00:00",
-   "dismissedHint": false
-  },
-  {
    "id": "tca-1673fa144fbb",
    "title": "$110M Transamerica Life Insurance class action settlement",
    "description": "(Photo Credit: Ei Ywet/Shutterstock) Transamerica Life Insurance Co. agreed to a $110 million class action settlement to resolve claims that it failed to credit certain cash value increases to eligible Direct Recognition",
@@ -1173,7 +1163,7 @@
   "HTTP 200 len=142 https://docs.google.com/spreadsheets/d/1jCjEKiU8iKn5aLoVkl1PLQI9H-kzmLx_BIngiMZz4OA/export?format=csv",
   "HTTP 403 len=5902 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/",
   "FETCH FAIL HTTPError https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/",
-  "HTTP 200 len=3144794 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/",
+  "HTTP 200 len=3144908 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/",
   "tca feed page 1: 75 items, kept 43",
   "HTTP 404 len=1285 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/?paged=2",
   "FETCH FAIL HTTPError https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/?paged=2",
