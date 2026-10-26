@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-25T14:00:15.886024+00:00",
+ "generated": "2026-10-26T16:22:07.651605+00:00",
  "vendors": [
   "Doordash",
   "Uber eats",
@@ -739,30 +739,6 @@
    "dismissedHint": false
   },
   {
-   "id": "tca-af3fe5df278c",
-   "title": "Bell & Howell PFAS cookware class action settlement",
-   "description": "(Photo Credit: GCapture/Shutterstock) E. Mishan &amp; Sons, the parent company of Gotham Steel, Granite Stone and Bell &amp; Howell, agreed to a class action settlement to resolve claims it falsely advertised cookware pr",
-   "deadline": "2026-09-25",
-   "payout": "$6",
-   "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/bell-howell-pfas-cookware-class-action-settlement/",
-   "source": "Top Class Actions",
-   "vendorMatch": false,
-   "firstSeen": "2026-09-13T15:16:07.919612+00:00",
-   "dismissedHint": false
-  },
-  {
-   "id": "tca-e51ba5de9cef",
-   "title": "$75M Northrop Grumman soil contamination class action settlement",
-   "description": "(Photo Credit: I AM NIKOM/Shutterstock) Northrop Grumman agreed to a $75 million class action settlement to resolve claims it contaminated soil and groundwater in Canoga Park, California. The Northrop Grumman settlement ",
-   "deadline": "2026-09-25",
-   "payout": "$75M",
-   "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/75m-northrop-grumman-soil-contamination-class-action-settlement/",
-   "source": "Top Class Actions",
-   "vendorMatch": false,
-   "firstSeen": "2026-09-13T15:16:07.919612+00:00",
-   "dismissedHint": false
-  },
-  {
    "id": "tca-4b7ef788d328",
    "title": "$14.5M CRST Expedited minimum wage class action settlement",
    "description": "(Photo Credit: CK Foto/Shutterstock) CRST Expedited agreed to pay $14.5 million as part of a class action settlement to resolve claims it violated California labor laws by failing to pay truck drivers minimum wage and ot",
@@ -829,18 +805,6 @@
    "deadline": "2026-10-07",
    "payout": "$1.5M",
    "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/1-5m-the-money-source-robocalls-class-action-settlement/",
-   "source": "Top Class Actions",
-   "vendorMatch": false,
-   "firstSeen": "2026-09-13T15:16:07.919612+00:00",
-   "dismissedHint": false
-  },
-  {
-   "id": "tca-6f9ead4ff110",
-   "title": "Tesla idle fees class action settlement",
-   "description": "(Photo Credit: Scharfsinn/Shutterstock) Tesla has agreed to a class action settlement to resolve claims it charged \u201cidle fees\u201d to customers who purchased vehicles with free lifetime Supercharging. The Tesla settlement be",
-   "deadline": "2026-09-25",
-   "payout": "$10",
-   "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/tesla-idle-fees-class-action-settlement/",
    "source": "Top Class Actions",
    "vendorMatch": false,
    "firstSeen": "2026-09-13T15:16:07.919612+00:00",
@@ -1163,7 +1127,7 @@
   "HTTP 200 len=142 https://docs.google.com/spreadsheets/d/1jCjEKiU8iKn5aLoVkl1PLQI9H-kzmLx_BIngiMZz4OA/export?format=csv",
   "HTTP 403 len=5902 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/",
   "FETCH FAIL HTTPError https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/",
-  "HTTP 200 len=3144908 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/",
+  "HTTP 200 len=3145439 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/",
   "tca feed page 1: 75 items, kept 43",
   "HTTP 404 len=1285 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/?paged=2",
   "FETCH FAIL HTTPError https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/?paged=2",
