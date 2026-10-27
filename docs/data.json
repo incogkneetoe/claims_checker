@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-26T16:22:07.651605+00:00",
+ "generated": "2026-10-27T15:36:22.598642+00:00",
  "vendors": [
   "Doordash",
   "Uber eats",
@@ -18,6 +18,28 @@
   "Whole Foods"
  ],
  "settlements": [
+  {
+   "id": "tca-02575c97c6c6",
+   "title": "$7.75M SeatGeek ticket fee class action settlement",
+   "description": "(Photo Credit: Przemek Klos/Shutterstock) SeatGeek has agreed to a $7.75 million class action settlement to resolve claims it failed to disclose fees on ticket purchases in Nevada. The SeatGeek settlement benefits indivi",
+   "deadline": "2026-12-06",
+   "payout": "$7.75M",
+   "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/7-75m-seatgeek-ticket-fee-class-action-settlement/",
+   "source": "Top Class Actions",
+   "vendorMatch": false,
+   "firstSeen": "2026-10-27T15:36:22.598642+00:00"
+  },
+  {
+   "id": "tca-93624e9ad657",
+   "title": "Baptist Health data breach class action settlement",
+   "description": "(Photo Credit: Tualek Photographer/Shutterstock) Baptist Health agreed to a class action settlement to resolve claims that a 2024 data breach compromised patient information. The Baptist Health class action settlement be",
+   "deadline": "2026-11-09",
+   "payout": "$400",
+   "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/baptist-health-data-breach-class-action-settlement/",
+   "source": "Top Class Actions",
+   "vendorMatch": false,
+   "firstSeen": "2026-10-27T15:36:22.598642+00:00"
+  },
   {
    "id": "tca-4c0cbb3af812",
    "title": "$325K Starbucks COBRA notice class action settlement",
@@ -1127,8 +1149,8 @@
   "HTTP 200 len=142 https://docs.google.com/spreadsheets/d/1jCjEKiU8iKn5aLoVkl1PLQI9H-kzmLx_BIngiMZz4OA/export?format=csv",
   "HTTP 403 len=5902 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/",
   "FETCH FAIL HTTPError https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/",
-  "HTTP 200 len=3145439 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/",
-  "tca feed page 1: 75 items, kept 43",
+  "HTTP 200 len=3101440 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/",
+  "tca feed page 1: 74 items, kept 41",
   "HTTP 404 len=1285 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/?paged=2",
   "FETCH FAIL HTTPError https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/?paged=2",
   "HTTP 403 len=6065 https://topclassactions.com/wp-json/wp/v2/posts?search=Doordash&per_page=30&_fields=title,link,content,date",
