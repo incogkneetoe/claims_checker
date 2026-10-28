@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-27T15:36:22.598642+00:00",
+ "generated": "2026-10-28T16:20:33.642514+00:00",
  "vendors": [
   "Doordash",
   "Uber eats",
@@ -19,6 +19,17 @@
  ],
  "settlements": [
   {
+   "id": "tca-0d835a771a73",
+   "title": "$9.25M Brighthouse Life Insurance breach of contract class action settlement",
+   "description": "(Photo Credit: Rawpixel.com/Shutterstock) Brighthouse Life Insurance Co. agreed to a $9.25 million class action settlement to resolve claims it failed to reduce the cost of insurance (COI) rates despite improved mortalit",
+   "deadline": "2026-12-11",
+   "payout": "$9.25M",
+   "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/9-25m-brighthouse-life-insurance-breach-of-contract-class-action-settlement/",
+   "source": "Top Class Actions",
+   "vendorMatch": false,
+   "firstSeen": "2026-10-28T16:20:33.642514+00:00"
+  },
+  {
    "id": "tca-02575c97c6c6",
    "title": "$7.75M SeatGeek ticket fee class action settlement",
    "description": "(Photo Credit: Przemek Klos/Shutterstock) SeatGeek has agreed to a $7.75 million class action settlement to resolve claims it failed to disclose fees on ticket purchases in Nevada. The SeatGeek settlement benefits indivi",
@@ -27,7 +38,8 @@
    "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/7-75m-seatgeek-ticket-fee-class-action-settlement/",
    "source": "Top Class Actions",
    "vendorMatch": false,
-   "firstSeen": "2026-10-27T15:36:22.598642+00:00"
+   "firstSeen": "2026-10-27T15:36:22.598642+00:00",
+   "dismissedHint": false
   },
   {
    "id": "tca-93624e9ad657",
@@ -38,7 +50,8 @@
    "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/baptist-health-data-breach-class-action-settlement/",
    "source": "Top Class Actions",
    "vendorMatch": false,
-   "firstSeen": "2026-10-27T15:36:22.598642+00:00"
+   "firstSeen": "2026-10-27T15:36:22.598642+00:00",
+   "dismissedHint": false
   },
   {
    "id": "tca-4c0cbb3af812",
@@ -1149,8 +1162,8 @@
   "HTTP 200 len=142 https://docs.google.com/spreadsheets/d/1jCjEKiU8iKn5aLoVkl1PLQI9H-kzmLx_BIngiMZz4OA/export?format=csv",
   "HTTP 403 len=5902 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/",
   "FETCH FAIL HTTPError https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/",
-  "HTTP 200 len=3101440 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/",
-  "tca feed page 1: 74 items, kept 41",
+  "HTTP 200 len=3055762 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/",
+  "tca feed page 1: 73 items, kept 41",
   "HTTP 404 len=1285 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/?paged=2",
   "FETCH FAIL HTTPError https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/?paged=2",
   "HTTP 403 len=6065 https://topclassactions.com/wp-json/wp/v2/posts?search=Doordash&per_page=30&_fields=title,link,content,date",
@@ -1158,7 +1171,7 @@
   "wp-api blocked on first vendor; skipping the rest",
   "HTTP 403 len=5748 https://topclassactions.com/sitemap_index.xml",
   "FETCH FAIL HTTPError https://topclassactions.com/sitemap_index.xml",
-  "HTTP 200 len=715785 https://www.classaction.org/settlements",
+  "HTTP 200 len=757144 https://www.classaction.org/settlements",
   "cao anchors: 5, samples: ['Charlotte Motor Speedway Landfill Class ', 'Visit Official Settlement Website', 'Rhode Island Bioenergy Facility Class Ac', 'Visit Official Settlement Website', 'List of Closed Settlements']"
  ]
 }
