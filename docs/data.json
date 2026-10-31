@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-30T16:22:06.283078+00:00",
+ "generated": "2026-10-31T15:32:27.191814+00:00",
  "vendors": [
   "Doordash",
   "Uber eats",
@@ -19,6 +19,28 @@
  ],
  "settlements": [
   {
+   "id": "tca-319669270374",
+   "title": "$2.7M Zumba privacy class action settlement",
+   "description": "(Photo Credit: Woodan/Shutterstock) Zumba has agreed to a $2.7 million class action settlement to resolve claims it violated the federal Video Privacy Protection Act (VPPA) by sharing purchase information with third part",
+   "deadline": "2026-12-14",
+   "payout": "$2.7M",
+   "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/2-7m-zumba-privacy-class-action-settlement/",
+   "source": "Top Class Actions",
+   "vendorMatch": false,
+   "firstSeen": "2026-10-31T15:32:27.191814+00:00"
+  },
+  {
+   "id": "tca-a1fee9853b13",
+   "title": "$2M Covenant Health data breach class action settlement",
+   "description": "(Photo Credit: Digineer Station/Shutterstock) Covenant Health agreed to a $2 million class action settlement to resolve claims that it failed to prevent a 2025 data breach that compromised sensitive patient information. ",
+   "deadline": "2026-12-15",
+   "payout": "$2M",
+   "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/2m-covenant-health-data-breach-class-action-settlement/",
+   "source": "Top Class Actions",
+   "vendorMatch": false,
+   "firstSeen": "2026-10-31T15:32:27.191814+00:00"
+  },
+  {
    "id": "tca-c8344afd62ad",
    "title": "$975K Jimmy John\u2019s job postings class action settlement",
    "description": "(Photo Credit: Aaron of L.A. Photography/Shutterstock) Jimmy John\u2019s has agreed to pay $975,000 to resolve claims it violated Washington law by failing to disclose wage scales and salary ranges in job listings. The Jimmy ",
@@ -27,7 +49,8 @@
    "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/975k-jimmy-johns-job-postings-class-action-settlement/",
    "source": "Top Class Actions",
    "vendorMatch": false,
-   "firstSeen": "2026-10-30T16:22:06.283078+00:00"
+   "firstSeen": "2026-10-30T16:22:06.283078+00:00",
+   "dismissedHint": false
   },
   {
    "id": "tca-a3cfb7c2d797",
@@ -1150,8 +1173,8 @@
   "HTTP 200 len=142 https://docs.google.com/spreadsheets/d/1jCjEKiU8iKn5aLoVkl1PLQI9H-kzmLx_BIngiMZz4OA/export?format=csv",
   "HTTP 403 len=5902 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/",
   "FETCH FAIL HTTPError https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/",
-  "HTTP 200 len=3088357 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/",
-  "tca feed page 1: 74 items, kept 43",
+  "HTTP 200 len=3001217 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/",
+  "tca feed page 1: 72 items, kept 41",
   "HTTP 404 len=1285 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/?paged=2",
   "FETCH FAIL HTTPError https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/?paged=2",
   "HTTP 403 len=6065 https://topclassactions.com/wp-json/wp/v2/posts?search=Doordash&per_page=30&_fields=title,link,content,date",
