@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-01T16:30:07.748437+00:00",
+ "generated": "2026-11-02T19:53:00.051251+00:00",
  "vendors": [
   "Doordash",
   "Uber eats",
@@ -18,6 +18,28 @@
   "Whole Foods"
  ],
  "settlements": [
+  {
+   "id": "tca-fba0a9932e24",
+   "title": "$1.78M Fairmont Federal Credit Union data breach class action settlement",
+   "description": "(Photo Credit: Digineer Station/Shutterstock) Fairmont Federal Credit Union agreed to pay more than $1.7 million as part of a class action settlement to resolve claims it failed to prevent a 2023 data breach. The Fairmon",
+   "deadline": "2026-12-18",
+   "payout": "$1.78M",
+   "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/1-78m-fairmont-federal-credit-union-data-breach-class-action-settlement/",
+   "source": "Top Class Actions",
+   "vendorMatch": false,
+   "firstSeen": "2026-11-02T19:53:00.051251+00:00"
+  },
+  {
+   "id": "tca-6853ce875683",
+   "title": "$3M Simplilearn VPPA violation class action settlement",
+   "description": "(Photo Credit: PeopleImages/Shutterstock) Simplilearn agreed to a $3 million class action settlement to resolve claims it violated the federal Video Privacy Protection Act (VPPA) by sharing user data with third parties w",
+   "deadline": "2026-12-15",
+   "payout": "$3M",
+   "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/3m-simplilearn-vppa-violation-class-action-settlement/",
+   "source": "Top Class Actions",
+   "vendorMatch": false,
+   "firstSeen": "2026-11-02T19:53:00.051251+00:00"
+  },
   {
    "id": "tca-319669270374",
    "title": "$2.7M Zumba privacy class action settlement",
@@ -751,18 +773,6 @@
    "dismissedHint": false
   },
   {
-   "id": "tca-4eed7c00803d",
-   "title": "$3.57M Lloyd\u2019s of London insurance price-fixing class action settlement",
-   "description": "(Photo Credit: FON&#8217;s Fasai/Shutterstock) Lloyd\u2019s agreed to pay $3.57 million as part of an ongoing class action settlement to resolve claims it violated federal racketeering laws by conspiring with other insurers t",
-   "deadline": "2026-10-02",
-   "payout": "$3.57M",
-   "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/3-57m-lloyds-of-london-insurance-price-fixing-class-action-settlement/",
-   "source": "Top Class Actions",
-   "vendorMatch": false,
-   "firstSeen": "2026-09-15T14:32:59.110041+00:00",
-   "dismissedHint": false
-  },
-  {
    "id": "tca-55b78634c6c2",
    "title": "$350,000 TED Foundation VPPA class action settlement",
    "description": "(Photo Credit: Garun .Prdt/Shuttertsock) TED Foundation Inc. agreed to a $350,000 class action settlement to resolve claims it violated federal privacy law by disclosing account holders\u2019 information to third parties. The",
@@ -901,18 +911,6 @@
    "deadline": "2026-10-12",
    "payout": "$21.5M",
    "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/fca-us-emissions-warranty-class-action-settlement/",
-   "source": "Top Class Actions",
-   "vendorMatch": false,
-   "firstSeen": "2026-09-13T14:16:51.122560+00:00",
-   "dismissedHint": false
-  },
-  {
-   "id": "tca-1673fa144fbb",
-   "title": "$110M Transamerica Life Insurance class action settlement",
-   "description": "(Photo Credit: Ei Ywet/Shutterstock) Transamerica Life Insurance Co. agreed to a $110 million class action settlement to resolve claims that it failed to credit certain cash value increases to eligible Direct Recognition",
-   "deadline": "2026-10-02",
-   "payout": "$110M",
-   "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/110m-transamerica-life-insurance-class-action-settlement/",
    "source": "Top Class Actions",
    "vendorMatch": false,
    "firstSeen": "2026-09-13T14:16:51.122560+00:00",
@@ -1163,8 +1161,8 @@
   "HTTP 200 len=142 https://docs.google.com/spreadsheets/d/1jCjEKiU8iKn5aLoVkl1PLQI9H-kzmLx_BIngiMZz4OA/export?format=csv",
   "HTTP 403 len=5902 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/",
   "FETCH FAIL HTTPError https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/",
-  "HTTP 200 len=3001229 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/",
-  "tca feed page 1: 72 items, kept 41",
+  "HTTP 200 len=3083720 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/",
+  "tca feed page 1: 74 items, kept 42",
   "HTTP 404 len=1285 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/?paged=2",
   "FETCH FAIL HTTPError https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/?paged=2",
   "HTTP 403 len=6065 https://topclassactions.com/wp-json/wp/v2/posts?search=Doordash&per_page=30&_fields=title,link,content,date",
