@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-03T17:25:42.399910+00:00",
+ "generated": "2026-11-04T17:39:05.021419+00:00",
  "vendors": [
   "Doordash",
   "Uber eats",
@@ -847,18 +847,6 @@
    "dismissedHint": false
   },
   {
-   "id": "tca-d89694139f53",
-   "title": "$2.5M Palm Beach Tan TCPA class action settlement",
-   "description": "(Photo Credit: Alexey Boldin/Shutterstock) Palm Beach Tan has agreed to a $2.5 million class action settlement to resolve claims it violated federal telemarketing laws with unsolicited text messages. The Palm Beach Tan s",
-   "deadline": "2026-10-04",
-   "payout": "$2.5M",
-   "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/2-5m-palm-beach-tan-tcpa-class-action-settlement/",
-   "source": "Top Class Actions",
-   "vendorMatch": false,
-   "firstSeen": "2026-09-13T15:16:07.919612+00:00",
-   "dismissedHint": false
-  },
-  {
    "id": "tca-3698b663b39b",
    "title": "$21.5M New York City Central Booking class action settlement",
    "description": "(Photo Credit: Michael Vi/Shutterstock) The City of New York has agreed to pay $21.5 million to resolve class action lawsuit claims that it violated the rights of people detained in its Central Booking facilities. The Ne",
@@ -1163,8 +1151,8 @@
   "HTTP 200 len=142 https://docs.google.com/spreadsheets/d/1jCjEKiU8iKn5aLoVkl1PLQI9H-kzmLx_BIngiMZz4OA/export?format=csv",
   "HTTP 403 len=5881 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/",
   "FETCH FAIL HTTPError https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/",
-  "HTTP 200 len=2915151 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/",
-  "tca feed page 1: 70 items, kept 42",
+  "HTTP 200 len=2794975 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/",
+  "tca feed page 1: 67 items, kept 40",
   "HTTP 404 len=1285 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/?paged=2",
   "FETCH FAIL HTTPError https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/?paged=2",
   "HTTP 403 len=6043 https://topclassactions.com/wp-json/wp/v2/posts?search=Doordash&per_page=30&_fields=title,link,content,date",
@@ -1172,7 +1160,7 @@
   "wp-api blocked on first vendor; skipping the rest",
   "HTTP 403 len=5727 https://topclassactions.com/sitemap_index.xml",
   "FETCH FAIL HTTPError https://topclassactions.com/sitemap_index.xml",
-  "HTTP 200 len=733219 https://www.classaction.org/settlements",
+  "HTTP 200 len=698962 https://www.classaction.org/settlements",
   "cao anchors: 5, samples: ['Charlotte Motor Speedway Landfill Class ', 'Visit Official Settlement Website', 'Rhode Island Bioenergy Facility Class Ac', 'Visit Official Settlement Website', 'List of Closed Settlements']"
  ]
 }
