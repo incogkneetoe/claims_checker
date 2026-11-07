@@ -215,24 +215,98 @@ def parse_feed_items(xml_text):
         link = (item.findtext("link") or "").strip()
         if not title or not link:
             continue
-        body = item.findtext(content_ns) or item.findtext("description") or ""
-        body = re.sub(r"<[^>]+>", " ", body)
-        body = re.sub(r"\s+", " ", body).strip()
+        raw = item.findtext(content_ns) or item.findtext("description") or ""
+        body = re.sub(r"<[^>]+>", " ", raw)
+        body = html_unescape(re.sub(r"\s+", " ", body).strip())
         items.append(
-            {"title": title, "link": link, "body": body,
+            {"title": title, "link": link, "body": body, "raw": raw,
              "pub": (item.findtext("pubDate") or "").strip()}
         )
     return items
 
 
+BOX_LABELS = [
+    "Who's Eligible",
+    "Who\u2019s Eligible",
+    "Potential Award",
+    "Proof of Purchase",
+    "Claim Form Deadline",
+    "Claim Form",
+    "Case Name",
+    "Final Hearing",
+    "Settlement Website",
+]
+_LABEL_ALT = "|".join(re.escape(l) for l in sorted(BOX_LABELS, key=len, reverse=True))
+NO_PROOF_RE = re.compile(
+    r"^(n/?a|none|not required|no proof|no proof (of purchase )?(is )?(required|needed|necessary))",
+    re.I,
+)
+
+
+def html_unescape(s):
+    import html
+    return html.unescape(s)
+
+
+def box_field(body, label):
+    """Value of a summary-box field: text after the label, up to the next label."""
+    labels = [label]
+    if label == "Who's Eligible":
+        labels.append("Who\u2019s Eligible")
+    for lb in labels:
+        m = re.search(
+            re.escape(lb) + r"\s*:?\s*(.+?)(?=\s+(?:" + _LABEL_ALT + r")\b|$)",
+            body,
+        )
+        if m:
+            return m.group(1).strip(" :\u00bb")[:400]
+    return None
+
+
+def claim_form_url(raw):
+    """The href of the 'file a claim' link inside the article HTML, if any."""
+    for m in re.finditer(r'<a\s[^>]*href="([^"]+)"[^>]*>(.*?)</a>', raw, re.I | re.S):
+        text = re.sub(r"<[^>]+>", "", m.group(2)).lower()
+        if "file a claim" in text or "claim form" in text:
+            return html_unescape(m.group(1))
+    return None
+
+
+def classify_proof(value):
+    if value is None:
+        return None
+    return bool(NO_PROOF_RE.match(value.strip()))
+
+
 def entry_from_feed_item(it):
+    body = it["body"]
+    eligible = box_field(body, "Who's Eligible")
+    award = box_field(body, "Potential Award")
+    proof = box_field(body, "Proof of Purchase")
+    box_deadline = box_field(body, "Claim Form Deadline")
+    deadline = None
+    if box_deadline:
+        m = NUM_DATE_RE.search(box_deadline) or DATE_RE.search(box_deadline)
+        if m:
+            try:
+                deadline = dateparser.parse(m.group(0)).date().isoformat()
+            except (ValueError, OverflowError):
+                deadline = None
+    if not deadline:
+        deadline = find_deadline(body)
+    payout = award if award and award.strip().upper() not in ("TBD", "N/A", "") else None
     return {
         "id": "tca-" + slug_for(it["link"]),
         "title": it["title"][:140],
-        "description": it["body"][:220] or it["title"],
-        "deadline": find_deadline(it["body"]),
-        "payout": find_payout(it["title"]) or find_payout(it["body"]),
+        "description": (eligible or body[:220] or it["title"])[:400],
+        "eligible": eligible,
+        "proof": proof,
+        "noProof": classify_proof(proof),
+        "deadline": deadline,
+        "payout": payout,
+        "fund": find_payout(it["title"]),
         "claimUrl": it["link"],
+        "formUrl": claim_form_url(it.get("raw", "")),
         "source": "Top Class Actions",
     }
 
@@ -402,7 +476,7 @@ def main():
     if not tca:
         tca = scrape_tca_feed()
     targeted = scrape_tca_api_search(vendors)
-    scraped = scrape_classaction_org() + tca + targeted
+    scraped = tca + targeted
     if not scraped:
         log("WARNING: both sources returned nothing; keeping existing data as-is")
 
@@ -428,6 +502,8 @@ def main():
     pruned = []
     for s in by_id.values():
         if s.get("title", "").lower().startswith("list of"):
+            continue
+        if s.get("source") == "ClassAction.org":
             continue
         d = s.get("deadline")
         if d:

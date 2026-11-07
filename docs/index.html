@@ -7,8 +7,14 @@
 <title>Claim Watch</title>
 <style>
   :root {
-    --ink: #1C2420; --paper: #F7F8F6; --rule: #D9DED8;
-    --muted: #68716B; --green: #17694A; --red: #A33B2E;
+    --ink: #1C2420; --paper: #F7F8F6; --rule: #D9DED8; --card: #FFFFFF;
+    --muted: #68716B; --green: #17694A; --red: #A33B2E; --amber: #8A5A12;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ink: #E6EAE7; --paper: #141816; --rule: #2C332F; --card: #1B201D;
+      --muted: #98A29C; --green: #4CB287; --red: #E07A6C; --amber: #D9A657;
+    }
   }
   * { box-sizing: border-box; }
   body {
@@ -19,37 +25,49 @@
   header { border-bottom: 3px double var(--ink); padding-bottom: 14px; }
   h1 { font-family: Georgia, 'Times New Roman', serif; font-size: 34px; margin: 0; line-height: 1.1; }
   .sub { margin: 6px 0 0; font-size: 14px; color: var(--muted); }
+  .tabs { display: flex; gap: 0; margin-top: 14px; border-bottom: 1px solid var(--rule); }
+  .tab {
+    font: inherit; font-size: 15px; padding: 10px 14px; border: none; background: none;
+    color: var(--muted); cursor: pointer; border-bottom: 3px solid transparent; margin-bottom: -1px;
+  }
+  .tab.on { color: var(--ink); border-bottom-color: var(--green); font-weight: 600; }
+  .tab .n { font-size: 12px; color: var(--muted); font-weight: 400; margin-left: 4px; }
   .controls { display: flex; gap: 8px; flex-wrap: wrap; padding: 12px 0; border-bottom: 1px solid var(--rule); }
-  button, .filelink {
-    font: inherit; font-size: 14px; padding: 8px 14px; border: 1px solid var(--ink);
-    background: transparent; color: var(--ink); cursor: pointer; border-radius: 3px;
+  button.ctl, a.btn {
+    font: inherit; font-size: 14px; padding: 8px 14px; border: 1px solid var(--rule);
+    background: transparent; color: var(--muted); cursor: pointer; border-radius: 3px;
     text-decoration: none; display: inline-block;
   }
-  button.quiet { border-color: var(--rule); color: var(--muted); }
-  .filelink { background: var(--green); border-color: var(--green); color: #fff; }
+  a.btn.primary { background: var(--green); border-color: var(--green); color: #fff; }
   input[type=search] {
     font: inherit; font-size: 14px; padding: 8px 10px; border: 1px solid var(--rule);
-    border-radius: 3px; background: #fff; color: var(--ink); flex: 1; min-width: 140px;
+    border-radius: 3px; background: var(--card); color: var(--ink); flex: 1; min-width: 140px;
   }
+  .note { font-size: 13px; color: var(--muted); margin: 12px 0 0; line-height: 1.5; }
   article { padding: 16px 0; border-bottom: 1px solid var(--rule); }
-  article h2 { font-family: Georgia, 'Times New Roman', serif; font-size: 19px; margin: 0; display: inline; }
-  .badge { font-size: 12px; padding: 1px 7px; border-radius: 2px; margin-left: 8px; vertical-align: 2px; }
+  article h2 { font-family: Georgia, 'Times New Roman', serif; font-size: 19px; margin: 0; display: inline; line-height: 1.3; }
+  .badge { font-size: 12px; padding: 1px 7px; border-radius: 2px; margin-left: 6px; vertical-align: 2px; white-space: nowrap; }
   .badge.new { background: var(--ink); color: var(--paper); }
   .badge.match { background: var(--green); color: #fff; }
-  .desc { margin: 8px 0; font-size: 14.5px; line-height: 1.45; }
-  .meta { margin: 0 0 12px; font-size: 13.5px; color: var(--muted); }
+  .elig { margin: 10px 0 8px; font-size: 15px; line-height: 1.45; }
+  .elig b { font-weight: 600; }
+  .meta { margin: 0 0 12px; font-size: 13.5px; color: var(--muted); line-height: 1.6; }
   .meta .urgent { color: var(--red); font-weight: 600; }
-  .meta .payout { color: var(--green); font-weight: 600; }
+  .meta .pay { color: var(--green); font-weight: 600; }
+  .meta .proof { color: var(--amber); }
+  .row { display: flex; gap: 8px; flex-wrap: wrap; }
   .empty { padding: 40px 0; font-size: 15px; color: var(--muted); }
+  #vendorPanel { padding: 14px 0; border-bottom: 1px solid var(--rule); }
+  #vendorPanel a { color: var(--green); }
   footer { margin-top: 28px; font-size: 12.5px; color: var(--muted); line-height: 1.5; }
   @media (max-width: 520px) {
     .wrap { padding: 20px 14px 48px; }
     h1 { font-size: 27px; }
+    .tab { flex: 1; padding: 10px 6px; font-size: 14px; }
     input[type=search] { flex: 1 1 100%; }
-    .controls button { flex: 1 1 auto; }
-    button, .filelink { padding: 10px 14px; font-size: 15px; }
-    .desc { font-size: 15px; }
-    article .filelink { flex: 1; text-align: center; }
+    .controls button.ctl { flex: 1 1 auto; }
+    button.ctl, a.btn { padding: 10px 14px; font-size: 15px; }
+    article a.btn.primary { flex: 1; text-align: center; }
   }
 </style>
 </head>
@@ -59,120 +77,143 @@
     <h1>Claim Watch</h1>
     <p class="sub" id="sub">Loading&hellip;</p>
   </header>
+
+  <div class="tabs" role="tablist">
+    <button class="tab on" data-view="easy">No proof needed<span class="n" id="nEasy"></span></button>
+    <button class="tab" data-view="proof">Proof required<span class="n" id="nProof"></span></button>
+    <button class="tab" data-view="dismissed">Dismissed<span class="n" id="nDis"></span></button>
+  </div>
+  <p class="note" id="viewNote"></p>
+
   <div class="controls">
     <input type="search" id="q" placeholder="Filter by company or keyword">
-    <button class="quiet" id="vendorsBtn">Vendors</button>
-    <button class="quiet" id="matchesOnly">Matches only</button>
-    <button class="quiet" id="toggleDismissed">Dismissed</button>
+    <button class="ctl" id="vendorsBtn">Vendors</button>
   </div>
-  <div id="vendorPanel" style="display:none; padding:14px 0; border-bottom:1px solid var(--rule)">
+
+  <div id="vendorPanel" style="display:none">
     <p style="margin:0 0 8px; font-size:13px; color:var(--muted)">
-      Matched against these on the last scan. Edits to the sheet take effect
-      on the next morning's run.
+      Settlements naming these get a Match tag. Edits apply on the next morning's run.
       <a id="editSheet" href="#" target="_blank" rel="noopener">Edit the list</a>
     </p>
     <p id="vendorList" style="margin:0; font-size:14.5px; line-height:1.6"></p>
   </div>
+
   <div id="list"></div>
+
   <footer>
-    Updated daily by a scheduled scan of public settlement listings. Verify
-    eligibility and deadlines on the official settlement site before filing.
-    Only file claims where you actually qualify.
+    Updated daily from public settlement listings. Read the "Who's eligible" line before filing,
+    and only file claims where you actually qualify: claim forms are signed under penalty of perjury.
   </footer>
 </div>
 <script>
 (function () {
   const DK = "claimwatch:dismissed";
+  const SHEET_EDIT = "https://docs.google.com/spreadsheets/d/1jCjEKiU8iKn5aLoVkl1PLQI9H-kzmLx_BIngiMZz4OA/edit";
+  const NOTES = {
+    easy: "Open settlements where the listing says no proof of purchase is needed. If the eligible line describes you, filing usually takes a couple of minutes.",
+    proof: "These need receipts or other documentation, or the listing didn't say. Lower odds of being worth your time.",
+    dismissed: "Hidden settlements. Restore any to put it back."
+  };
   let data = { generated: null, settlements: [] };
-  let showDismissed = false;
-  let matchesOnly = false;
+  let view = "easy";
   let query = "";
 
   function dismissed() {
-    try { return JSON.parse(localStorage.getItem(DK)) || {}; }
-    catch { return {}; }
+    try { return JSON.parse(localStorage.getItem(DK)) || {}; } catch { return {}; }
   }
   function setDismissed(id, val) {
     const d = dismissed();
     if (val) d[id] = true; else delete d[id];
-    localStorage.setItem(DK, JSON.stringify(d));
+    try { localStorage.setItem(DK, JSON.stringify(d)); } catch {}
     render();
   }
-
   function esc(s) {
-    return String(s || "").replace(/[&<>"]/g, c =>
+    return String(s == null ? "" : s).replace(/[&<>"]/g, c =>
       ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
   }
-
   function daysUntil(iso) {
     const d = new Date(iso + "T23:59:59");
     return isNaN(d) ? null : Math.ceil((d - Date.now()) / 86400000);
   }
+  function isOpen(s) {
+    const days = s.deadline ? daysUntil(s.deadline) : null;
+    return days === null || days >= 0;
+  }
+  function bucket(s, dis) {
+    if (dis[s.id]) return "dismissed";
+    return s.noProof === true ? "easy" : "proof";
+  }
 
   function render() {
     const dis = dismissed();
-    const cutoff = Date.now() - 48 * 3600 * 1000;
+    const open = data.settlements.filter(isOpen);
+    const counts = { easy: 0, proof: 0, dismissed: 0 };
+    open.forEach(s => counts[bucket(s, dis)]++);
+    document.getElementById("nEasy").textContent = counts.easy;
+    document.getElementById("nProof").textContent = counts.proof;
+    document.getElementById("nDis").textContent = counts.dismissed;
+    document.getElementById("viewNote").textContent = NOTES[view];
+
     const q = query.toLowerCase();
-    const items = data.settlements.filter(s => {
-      if (!!dis[s.id] !== showDismissed) return false;
-      if (matchesOnly && !s.vendorMatch) return false;
-      if (q && !(s.title + " " + (s.description || "")).toLowerCase().includes(q)) return false;
-      const days = s.deadline ? daysUntil(s.deadline) : null;
-      if (days !== null && days < 0) return false;
-      return true;
-    });
+    const cutoff = Date.now() - 48 * 3600 * 1000;
+    const items = open
+      .filter(s => bucket(s, dis) === view)
+      .filter(s => !q || (s.title + " " + (s.eligible || s.description || "")).toLowerCase().includes(q))
+      .sort((a, b) => {
+        if (!!b.vendorMatch !== !!a.vendorMatch) return b.vendorMatch ? 1 : -1;
+        const da = a.deadline || "9999", db = b.deadline || "9999";
+        return da < db ? -1 : da > db ? 1 : 0;
+      });
+
     const list = document.getElementById("list");
     if (!items.length) {
       list.innerHTML = '<p class="empty">' +
-        (showDismissed ? "Nothing dismissed." :
-          "Nothing here yet. The first scheduled scan fills this in, or run the workflow manually from the Actions tab.") +
-        "</p>";
+        (view === "dismissed" ? "Nothing dismissed." :
+         view === "easy" ? "No no-proof settlements right now. New ones show up as the daily scan finds them." :
+         "Nothing here.") + "</p>";
       return;
     }
     list.innerHTML = items.map(s => {
       const days = s.deadline ? daysUntil(s.deadline) : null;
       const urgent = days !== null && days <= 14;
       const isNew = s.firstSeen && new Date(s.firstSeen).getTime() >= cutoff;
+      const award = s.payout ? '<span class="pay">' + esc(s.payout) + '</span>' : "Award TBD";
+      const fund = s.fund ? " &middot; " + esc(s.fund) + " fund" : "";
+      const proof = s.noProof === true ? "" :
+        ' &middot; <span class="proof">' + (s.proof ? "Proof: " + esc(s.proof) : "Proof requirement unknown") + "</span>";
+      const fileUrl = s.formUrl || s.claimUrl;
       return '<article>' +
         '<div><h2>' + esc(s.title) + '</h2>' +
-        (isNew && !showDismissed ? '<span class="badge new">New</span>' : '') +
         (s.vendorMatch ? '<span class="badge match">Match</span>' : '') +
+        (isNew && view !== "dismissed" ? '<span class="badge new">New</span>' : '') +
         '</div>' +
-        '<p class="desc">' + esc(s.description) + '</p>' +
+        '<p class="elig"><b>Who’s eligible:</b> ' + esc(s.eligible || s.description || "See listing") + '</p>' +
         '<p class="meta">' +
-        '<span class="' + (urgent ? "urgent" : "") + '">' +
-        (s.deadline ? "Deadline " + esc(s.deadline) + (days !== null ? " (" + days + " days)" : "") : "Deadline unknown") +
-        '</span> &middot; <span class="payout">' + esc(s.payout || "payout unknown") + '</span>' +
-        ' &middot; ' + esc(s.source || "") +
+          '<span class="' + (urgent ? "urgent" : "") + '">' +
+          (s.deadline ? "Deadline " + esc(s.deadline) + (days !== null ? " (" + days + " days)" : "") : "Deadline unknown") +
+          '</span> &middot; ' + award + fund + proof +
         '</p>' +
-        '<div style="display:flex;gap:8px;flex-wrap:wrap">' +
-        '<a class="filelink" target="_blank" rel="noopener" href="' + esc(s.claimUrl) + '">File claim</a>' +
-        '<button class="quiet" data-id="' + esc(s.id) + '" data-val="' + (showDismissed ? "0" : "1") + '">' +
-        (showDismissed ? "Restore" : "Dismiss") + '</button>' +
+        '<div class="row">' +
+          '<a class="btn primary" target="_blank" rel="noopener" href="' + esc(fileUrl) + '">File claim</a>' +
+          (s.formUrl ? '<a class="btn" target="_blank" rel="noopener" href="' + esc(s.claimUrl) + '">Details</a>' : '') +
+          '<button class="ctl" data-id="' + esc(s.id) + '" data-val="' + (view === "dismissed" ? "0" : "1") + '">' +
+            (view === "dismissed" ? "Restore" : "Dismiss") + '</button>' +
         '</div></article>';
     }).join("");
     list.querySelectorAll("button[data-id]").forEach(b =>
       b.addEventListener("click", () => setDismissed(b.dataset.id, b.dataset.val === "1")));
   }
 
-  const SHEET_EDIT =
-    "https://docs.google.com/spreadsheets/d/1jCjEKiU8iKn5aLoVkl1PLQI9H-kzmLx_BIngiMZz4OA/edit";
+  document.querySelectorAll(".tab").forEach(t => t.addEventListener("click", () => {
+    document.querySelectorAll(".tab").forEach(x => x.classList.toggle("on", x === t));
+    view = t.dataset.view;
+    render();
+  }));
+  document.getElementById("q").addEventListener("input", e => { query = e.target.value; render(); });
   document.getElementById("editSheet").href = SHEET_EDIT;
   document.getElementById("vendorsBtn").addEventListener("click", () => {
     const p = document.getElementById("vendorPanel");
     p.style.display = p.style.display === "none" ? "block" : "none";
-  });
-
-  document.getElementById("q").addEventListener("input", e => { query = e.target.value; render(); });
-  document.getElementById("matchesOnly").addEventListener("click", e => {
-    matchesOnly = !matchesOnly;
-    e.target.textContent = matchesOnly ? "Showing matches" : "Matches only";
-    render();
-  });
-  document.getElementById("toggleDismissed").addEventListener("click", e => {
-    showDismissed = !showDismissed;
-    e.target.textContent = showDismissed ? "Back to active" : "Dismissed";
-    render();
   });
 
   fetch("data.json", { cache: "no-store" })
@@ -181,17 +222,16 @@
       data = d;
       const vs = d.vendors || [];
       document.getElementById("vendorList").textContent =
-        vs.length ? vs.join(" \u00b7 ") : "No vendors loaded on the last scan.";
+        vs.length ? vs.join(" · ") : "No vendors loaded on the last scan.";
       const g = d.generated ? new Date(d.generated) : null;
       document.getElementById("sub").textContent =
-        "Open class action settlements, newest first." +
+        "Open class action settlements." +
         (g ? " Last scan " + g.toLocaleDateString() + " " +
           g.toLocaleTimeString([], { hour: "numeric", minute: "2-digit" }) + "." : "");
       render();
     })
     .catch(() => {
-      document.getElementById("sub").textContent =
-        "No data.json yet. Run the workflow once from the Actions tab.";
+      document.getElementById("sub").textContent = "Couldn't load data.json. Run the workflow from the Actions tab.";
     });
 })();
 </script>
