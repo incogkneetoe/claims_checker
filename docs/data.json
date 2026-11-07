@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-06T17:00:19.408823+00:00",
+ "generated": "2026-11-07T15:57:54.836177+00:00",
  "vendors": [
   "Doordash",
   "Uber eats",
@@ -18,6 +18,28 @@
   "Whole Foods"
  ],
  "settlements": [
+  {
+   "id": "tca-9939dd66327f",
+   "title": "$11.24M Knott\u2019s Berry Farm processing fee class action settlement",
+   "description": "(Photo Credit: Steve Cukrov/Shutterstock) Six Flags agreed to pay $11.24 million as part of a class action settlement to resolve claims it charged illegal processing fees for Knott\u2019s Berry Farm tickets. The Knott\u2019s Berry",
+   "deadline": "2026-12-22",
+   "payout": "$11.24M",
+   "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/11-24m-knotts-berry-farm-processing-fee-class-action-settlement/",
+   "source": "Top Class Actions",
+   "vendorMatch": false,
+   "firstSeen": "2026-11-07T15:57:54.836177+00:00"
+  },
+  {
+   "id": "tca-09cdb4b98c2a",
+   "title": "$14.3M AdaptHealth improper billing class action settlement",
+   "description": "(Photo Credit: rigsbyphoto/Shutterstock) AdaptHealth agreed to a $14.3 million class action settlement to resolve claims it violated North Carolina debt collection laws by sending misleading collection letters and billin",
+   "deadline": "2026-12-08",
+   "payout": "$14.3M",
+   "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/14-3m-adapthealth-improper-billing-class-action-settlement/",
+   "source": "Top Class Actions",
+   "vendorMatch": false,
+   "firstSeen": "2026-11-07T15:57:54.836177+00:00"
+  },
   {
    "id": "tca-6000524ffc42",
    "title": "$15M Bright Lending unlawful loans class action settlement",
@@ -763,18 +785,6 @@
    "dismissedHint": false
   },
   {
-   "id": "tca-1a8217f3deb0",
-   "title": "$3.1M Palomar Health data breach class action settlement",
-   "description": "(Photo Credit: Summit Art Creations/Shutterstock) Palomar Health agreed to a $3.1 million class action settlement to resolve claims that it failed to prevent a 2024 data breach that compromised patient information. The P",
-   "deadline": "2026-10-07",
-   "payout": "$3.1M",
-   "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/3-1m-palomar-health-data-breach-class-action-settlement/",
-   "source": "Top Class Actions",
-   "vendorMatch": false,
-   "firstSeen": "2026-09-16T14:27:19.545246+00:00",
-   "dismissedHint": false
-  },
-  {
    "id": "tca-55b78634c6c2",
    "title": "$350,000 TED Foundation VPPA class action settlement",
    "description": "(Photo Credit: Garun .Prdt/Shuttertsock) TED Foundation Inc. agreed to a $350,000 class action settlement to resolve claims it violated federal privacy law by disclosing account holders\u2019 information to third parties. The",
@@ -832,30 +842,6 @@
    "source": "Top Class Actions",
    "vendorMatch": false,
    "firstSeen": "2026-09-13T15:16:07.919612+00:00",
-   "dismissedHint": false
-  },
-  {
-   "id": "tca-8fda452a010f",
-   "title": "$1.5M The Money Source robocalls class action settlement",
-   "description": "(Photo Credit: FabrikaSimf/Shutterstock) The Money Source has agreed to a $1.5 million class action settlement to resolve claims it violated the federal Telephone Consumer Protection Act (TCPA) with unsolicited robocalls",
-   "deadline": "2026-10-07",
-   "payout": "$1.5M",
-   "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/1-5m-the-money-source-robocalls-class-action-settlement/",
-   "source": "Top Class Actions",
-   "vendorMatch": false,
-   "firstSeen": "2026-09-13T15:16:07.919612+00:00",
-   "dismissedHint": false
-  },
-  {
-   "id": "tca-93034bb03b54",
-   "title": "Highlands Oncology Group data breach class action settlement",
-   "description": "(Photo Credit: Mer_Studio/Shutterstock) Highlands Oncology Group has agreed to a class action settlement to resolve claims that a 2025 data breach compromised patient information. The Highlands Oncology settlement benefi",
-   "deadline": "2026-10-07",
-   "payout": "$4,250",
-   "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/highlands-oncology-group-data-breach-class-action-settlement/",
-   "source": "Top Class Actions",
-   "vendorMatch": false,
-   "firstSeen": "2026-09-13T14:16:51.122560+00:00",
    "dismissedHint": false
   },
   {
@@ -1003,18 +989,6 @@
    "dismissedHint": false
   },
   {
-   "id": "tca-f7a076ac12ba",
-   "title": "Lands\u2019 End data breach class action settlement",
-   "description": "(Photo Credit: bump23/Shutterstock) Lands\u2019 End agreed to a class action settlement to resolve claims that it failed to prevent a 2024 data breach that compromised sensitive consumer information. The Lands\u2019 End settlement",
-   "deadline": "2026-10-07",
-   "payout": "$5,000",
-   "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/lands-end-data-breach-class-action-settlement/",
-   "source": "Top Class Actions",
-   "vendorMatch": false,
-   "firstSeen": "2026-09-13T14:16:51.122560+00:00",
-   "dismissedHint": false
-  },
-  {
    "id": "tca-d7be5c994943",
    "title": "$9M Kia Hyundai settlement offers cash and security upgrades to owners",
    "description": "(Photo Credit: ovimoldodiu/Shutterstock) Kia and Hyundai agreed to a $9 million multistate settlement to resolve claims that vehicles without engine immobilizers are at risk for theft. The Kia Hyundai settlement provides",
@@ -1089,10 +1063,10 @@
  ],
  "debug": [
   "HTTP 200 len=142 https://docs.google.com/spreadsheets/d/1jCjEKiU8iKn5aLoVkl1PLQI9H-kzmLx_BIngiMZz4OA/export?format=csv",
-  "HTTP 403 len=5881 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/",
+  "HTTP 403 len=5902 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/",
   "FETCH FAIL HTTPError https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/",
-  "HTTP 200 len=2753581 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/",
-  "tca feed page 1: 66 items, kept 40",
+  "HTTP 200 len=2836357 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/",
+  "tca feed page 1: 68 items, kept 42",
   "HTTP 404 len=1285 https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/?paged=2",
   "FETCH FAIL HTTPError https://topclassactions.com/category/lawsuit-settlements/open-lawsuit-settlements/feed/?paged=2",
   "HTTP 403 len=6043 https://topclassactions.com/wp-json/wp/v2/posts?search=Doordash&per_page=30&_fields=title,link,content,date",
