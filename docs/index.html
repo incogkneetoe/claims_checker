@@ -159,7 +159,7 @@
   }
   function bucket(s, dis) {
     if (dis[s.id]) return "dismissed";
-    return s.noProof === true && !s.needsId && !otherState(s) ? "easy" : "proof";
+    return s.noProof === true && !s.needsId && !s.formNeedsId && !otherState(s) ? "easy" : "proof";
   }
 
   function render() {
@@ -200,7 +200,9 @@
         (s.payout && /^varies$/i.test(s.payout.trim()) ? "Award varies" : "Award TBD");
       const st = otherState(s);
       const stNote = (st ? ' &middot; <span class="proof">' + esc(st) + ' only</span>' : "") +
-        (s.needsId ? ' &middot; <span class="proof">Needs ID from a notice (try the lookup on the claim site)</span>' : "");
+        ((s.needsId || s.formNeedsId) ? ' &middot; <span class="proof">Form asks for an ID from a notice (try the lookup on the claim site)</span>' : "") +
+        (view === "easy" && s.formStatus && s.formStatus !== "checked" ? ' &middot; <span class="proof">Form not verified</span>' : "") +
+        (view === "easy" && s.formStatus === "checked" ? ' &middot; Form checked: no ID' : "");
       const fund = s.fund ? " &middot; " + esc(s.fund) + " fund" : "";
       const proof = s.noProof === true ? "" :
         ' &middot; <span class="proof">' + (s.proof ? "Proof: " + esc(s.proof) : "Proof requirement unknown") + "</span>";

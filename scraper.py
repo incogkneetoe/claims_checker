@@ -446,6 +446,57 @@ def scrape_tca_api_search(vendors):
     return out
 
 
+FORM_ID_RE = re.compile(
+    r"class member id|claimant id|notice id|notice number|unique id|unique identifier|"
+    r"claim id|claim number|claimant number|member id|settlement id|confirmation code|"
+    r"activation code|\bpin\b|access code|claim code|identification number",
+    re.I,
+)
+
+
+def check_form(url):
+    """Fetch a claim form page and report whether it asks for an ID from a
+    notice. Returns (needs_id_match_or_None, status)."""
+    try:
+        r = requests.get(url, headers=HEADERS, timeout=25, allow_redirects=True)
+    except requests.RequestException as e:
+        return None, f"fetch failed: {type(e).__name__}"
+    if r.status_code >= 400:
+        return None, f"HTTP {r.status_code}"
+    text = re.sub(r"<script[\s\S]*?</script>|<style[\s\S]*?</style>", " ", r.text, flags=re.I)
+    # labels, placeholders, and visible text all count
+    attrs = " ".join(re.findall(r'(?:placeholder|aria-label|name|id|title)="([^"]{2,80})"', text))
+    visible = re.sub(r"<[^>]+>", " ", text)
+    hay = html_unescape(visible + " " + attrs.replace("_", " ").replace("-", " "))
+    m = FORM_ID_RE.search(hay)
+    if m:
+        return m.group(0), "checked"
+    if len(visible.split()) < 40:
+        return None, "unreadable (likely script-rendered)"
+    return None, "checked"
+
+
+def verify_forms(entries, previous):
+    """Check claim forms for no-proof entries, once per settlement."""
+    checked = 0
+    for e in entries:
+        old = previous.get(e["id"], {})
+        if old.get("formStatus"):
+            e["formStatus"] = old["formStatus"]
+            e["formNeedsId"] = old.get("formNeedsId")
+            continue
+        if e.get("noProof") is not True:
+            continue
+        url = e.get("formUrl") or e.get("claimUrl")
+        hit, status = check_form(url)
+        e["formNeedsId"] = hit
+        e["formStatus"] = status
+        DIAG.append(f"form {e['id']}: {status}{' needs ' + hit if hit else ''}")
+        checked += 1
+        time.sleep(1)
+    log(f"claim forms checked: {checked}")
+
+
 def load_vendors():
     """Vendor list priority: VENDORS_URL (gist/pastebin raw), then VENDORS
     env var (Actions secret), then vendors.txt. One vendor per line;
@@ -498,6 +549,7 @@ def main():
 
     existing = load_existing()
     by_id = {s["id"]: s for s in existing.get("settlements", [])}
+    verify_forms(scraped, by_id)
     now = datetime.now(timezone.utc)
     now_iso = now.isoformat()
 
