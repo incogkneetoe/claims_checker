@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-07T16:25:56.917929+00:00",
+ "generated": "2026-11-07T16:28:05.563128+00:00",
  "vendors": [
   "Doordash",
   "Uber eats",
@@ -32,6 +32,8 @@
    "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/8m-progressive-pip-insurance-class-action-settlement/",
    "formUrl": "https://veritaconnect.com/traviscountypipsettlement",
    "source": "Top Class Actions",
+   "formNeedsId": null,
+   "formStatus": "HTTP 403",
    "vendorMatch": false,
    "firstSeen": "2026-11-07T16:09:33.887641+00:00",
    "dismissedHint": false
@@ -50,6 +52,8 @@
    "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/8-82m-state-farm-umpd-insurance-class-action-settlement/",
    "formUrl": "https://forms.ksacms.com/efiling/fr/eform/WashingtonUMPDsettlement_claimform/new?form-version=1",
    "source": "Top Class Actions",
+   "formNeedsId": null,
+   "formStatus": "HTTP 403",
    "vendorMatch": false,
    "firstSeen": "2026-11-07T16:09:33.887641+00:00",
    "dismissedHint": false
@@ -122,6 +126,8 @@
    "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/4-5m-hearthside-food-solutions-child-labor-class-action-settlement/",
    "formUrl": "https://www.hearthsidefssettlement.com/il-ag-v-hearthside-claim-form",
    "source": "Top Class Actions",
+   "formNeedsId": "claimant id",
+   "formStatus": "checked",
    "vendorMatch": false,
    "firstSeen": "2026-11-07T16:09:33.887641+00:00",
    "dismissedHint": false
@@ -194,6 +200,8 @@
    "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/11-24m-knotts-berry-farm-processing-fee-class-action-settlement/",
    "formUrl": "https://www.knottsgreatamericasettlement.com/submit-claim",
    "source": "Top Class Actions",
+   "formNeedsId": null,
+   "formStatus": "unreadable (likely script-rendered)",
    "vendorMatch": false,
    "firstSeen": "2026-11-07T15:57:54.836177+00:00",
    "dismissedHint": false
@@ -212,6 +220,8 @@
    "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/14-3m-adapthealth-improper-billing-class-action-settlement/",
    "formUrl": "https://secure.ncadapthealthsettlement.com",
    "source": "Top Class Actions",
+   "formNeedsId": null,
+   "formStatus": "unreadable (likely script-rendered)",
    "vendorMatch": false,
    "firstSeen": "2026-11-07T15:57:54.836177+00:00",
    "dismissedHint": false
@@ -230,6 +240,8 @@
    "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/15m-bright-lending-unlawful-loans-class-action-settlement/",
    "formUrl": null,
    "source": "Top Class Actions",
+   "formNeedsId": null,
+   "formStatus": "HTTP 403",
    "vendorMatch": false,
    "firstSeen": "2026-11-05T17:44:43.279204+00:00",
    "dismissedHint": false
@@ -266,6 +278,8 @@
    "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/3m-simplilearn-vppa-violation-class-action-settlement/",
    "formUrl": "https://veritaconnect.com/SimplilearnPrivacySettlement/Claimant",
    "source": "Top Class Actions",
+   "formNeedsId": null,
+   "formStatus": "HTTP 403",
    "vendorMatch": false,
    "firstSeen": "2026-11-02T19:53:00.051251+00:00",
    "dismissedHint": false
@@ -284,6 +298,8 @@
    "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/2-7m-zumba-privacy-class-action-settlement/",
    "formUrl": null,
    "source": "Top Class Actions",
+   "formNeedsId": null,
+   "formStatus": "HTTP 403",
    "vendorMatch": false,
    "firstSeen": "2026-10-31T15:32:27.191814+00:00",
    "dismissedHint": false
@@ -320,6 +336,8 @@
    "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/975k-jimmy-johns-job-postings-class-action-settlement/",
    "formUrl": null,
    "source": "Top Class Actions",
+   "formNeedsId": null,
+   "formStatus": "HTTP 403",
    "vendorMatch": false,
    "firstSeen": "2026-10-30T16:22:06.283078+00:00",
    "dismissedHint": false
@@ -356,6 +374,8 @@
    "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/32m-goodrx-data-privacy-class-action-settlement/",
    "formUrl": "https://goodrxprivacysettlement.com/file-not-noticed",
    "source": "Top Class Actions",
+   "formNeedsId": null,
+   "formStatus": "unreadable (likely script-rendered)",
    "vendorMatch": false,
    "firstSeen": "2026-10-29T16:30:32.024146+00:00",
    "dismissedHint": false
@@ -374,6 +394,8 @@
    "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/9-25m-brighthouse-life-insurance-breach-of-contract-class-action-settlement/",
    "formUrl": null,
    "source": "Top Class Actions",
+   "formNeedsId": null,
+   "formStatus": "HTTP 403",
    "vendorMatch": false,
    "firstSeen": "2026-10-28T16:20:33.642514+00:00",
    "dismissedHint": false
@@ -392,6 +414,8 @@
    "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/7-75m-seatgeek-ticket-fee-class-action-settlement/",
    "formUrl": "https://seatgeekticketfeessettlement.com/form/claim",
    "source": "Top Class Actions",
+   "formNeedsId": "PIN",
+   "formStatus": "checked",
    "vendorMatch": false,
    "firstSeen": "2026-10-27T15:36:22.598642+00:00",
    "dismissedHint": false
@@ -428,6 +452,8 @@
    "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/325k-starbucks-cobra-notice-class-action-settlement/",
    "formUrl": null,
    "source": "Top Class Actions",
+   "formNeedsId": null,
+   "formStatus": "HTTP 403",
    "vendorMatch": false,
    "firstSeen": "2026-10-24T13:43:15.914229+00:00",
    "dismissedHint": false
@@ -500,6 +526,8 @@
    "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/7m-hughes-federal-credit-union-repossession-notification-class-action-settlement/",
    "formUrl": null,
    "source": "Top Class Actions",
+   "formNeedsId": null,
+   "formStatus": "HTTP 403",
    "vendorMatch": false,
    "firstSeen": "2026-10-23T14:31:47.972620+00:00",
    "dismissedHint": false
@@ -518,6 +546,8 @@
    "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/3-84m-coast-dental-tcpa-violations-class-action-settlement/",
    "formUrl": "https://chavianocoastdentalservices.claims-administrator.com",
    "source": "Top Class Actions",
+   "formNeedsId": "claim number",
+   "formStatus": "checked",
    "vendorMatch": false,
    "firstSeen": "2026-10-22T14:45:03.138121+00:00",
    "dismissedHint": false
@@ -554,6 +584,8 @@
    "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/4-5m-aramark-capital-one-arena-venue-fee-class-action-settlement/",
    "formUrl": "https://venuefeesettlement.pnclassaction.com",
    "source": "Top Class Actions",
+   "formNeedsId": null,
+   "formStatus": "HTTP 403",
    "vendorMatch": false,
    "firstSeen": "2026-10-21T14:45:14.159053+00:00",
    "dismissedHint": false
@@ -644,6 +676,8 @@
    "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/100m-equifax-fcra-violations-class-action-settlement/",
    "formUrl": "https://www.veritaconnect.com/EquifaxFairCreditReportingSettlement/Claimant",
    "source": "Top Class Actions",
+   "formNeedsId": null,
+   "formStatus": "HTTP 403",
    "vendorMatch": false,
    "firstSeen": "2026-10-16T14:24:08.082624+00:00",
    "dismissedHint": false
@@ -710,6 +744,8 @@
    "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/6m-teleflora-do-not-call-registry-class-action-settlement/",
    "formUrl": "https://www.tfsettlement.com/submit-claim",
    "source": "Top Class Actions",
+   "formNeedsId": null,
+   "formStatus": "unreadable (likely script-rendered)",
    "vendorMatch": false,
    "firstSeen": "2026-10-13T17:14:04.362667+00:00",
    "dismissedHint": false
@@ -764,6 +800,8 @@
    "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/4-7m-neutrogena-skin360-bipa-violation-class-action-settlement/",
    "formUrl": "https://skin360bipasettlement.pnclassaction.com",
    "source": "Top Class Actions",
+   "formNeedsId": null,
+   "formStatus": "HTTP 403",
    "vendorMatch": false,
    "firstSeen": "2026-10-10T15:37:58.775747+00:00",
    "dismissedHint": false
@@ -800,6 +838,8 @@
    "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/45m-new-york-red-light-camera-fee-class-action-settlement/",
    "formUrl": "https://forms.suffolkredlightsettlement.com/efiling/fr/eform/mcgrath_v_suffolk_claimform/new?form-version=1&fr-wizard-page=section-1",
    "source": "Top Class Actions",
+   "formNeedsId": null,
+   "formStatus": "HTTP 403",
    "vendorMatch": false,
    "firstSeen": "2026-10-08T17:04:27.067162+00:00",
    "dismissedHint": false
@@ -854,6 +894,8 @@
    "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/309-5m-amazon-return-policy-class-action-settlement/",
    "formUrl": "https://www.returnsettlement.com/submit-claim",
    "source": "Top Class Actions",
+   "formNeedsId": null,
+   "formStatus": "unreadable (likely script-rendered)",
    "vendorMatch": false,
    "firstSeen": "2026-10-05T18:57:16.538979+00:00",
    "dismissedHint": false
@@ -872,6 +914,8 @@
    "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/30m-equifax-hard-inquiry-dispute-class-action-settlement/",
    "formUrl": "https://www.equifaxdisputeclassaction.com/claimform.aspx",
    "source": "Top Class Actions",
+   "formNeedsId": "Claim Number",
+   "formStatus": "checked",
    "vendorMatch": false,
    "firstSeen": "2026-10-04T15:01:47.063964+00:00",
    "dismissedHint": false
@@ -908,6 +952,8 @@
    "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/3-5m-mdlive-data-privacy-class-action-settlement/",
    "formUrl": "https://forms.ksacms.com/efiling/fr/eform/yates_v_evernorth_claimform/new?form-version=1&fr-wizard-page=section-1",
    "source": "Top Class Actions",
+   "formNeedsId": null,
+   "formStatus": "HTTP 403",
    "vendorMatch": false,
    "firstSeen": "2026-10-03T14:27:51.797440+00:00",
    "dismissedHint": false
@@ -926,6 +972,8 @@
    "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/labcorp-web-tracking-class-action-settlement/",
    "formUrl": null,
    "source": "Top Class Actions",
+   "formNeedsId": null,
+   "formStatus": "HTTP 403",
    "vendorMatch": false,
    "firstSeen": "2026-10-02T16:01:11.043998+00:00",
    "dismissedHint": false
@@ -998,6 +1046,8 @@
    "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/4-25m-wellstar-health-tracking-pixel-class-action-settlement/",
    "formUrl": "https://claim.wellstardataprivacysettlement.com/login",
    "source": "Top Class Actions",
+   "formNeedsId": null,
+   "formStatus": "HTTP 403",
    "vendorMatch": false,
    "firstSeen": "2026-09-30T16:09:13.758752+00:00",
    "dismissedHint": false
@@ -1070,6 +1120,8 @@
    "claimUrl": "https://topclassactions.com/lawsuit-settlements/open-lawsuit-settlements/navy-federal-credit-union-unauthorized-loans-class-action-settlement/",
    "formUrl": "https://www.nfculoansettlement.com/auth/eclaimverify/OTIx",
    "source": "Top Class Actions",
+   "formNeedsId": "Notice Id",
+   "formStatus": "checked",
    "vendorMatch": false,
    "firstSeen": "2026-09-25T14:51:15.929581+00:00",
    "dismissedHint": false
@@ -1525,6 +1577,32 @@
   "FETCH FAIL HTTPError https://topclassactions.com/wp-json/wp/v2/posts?search=Doordash&per_page=30&_fields=title,link,content,date",
   "wp-api blocked on first vendor; skipping the rest",
   "HTTP 403 len=5727 https://topclassactions.com/sitemap_index.xml",
-  "FETCH FAIL HTTPError https://topclassactions.com/sitemap_index.xml"
+  "FETCH FAIL HTTPError https://topclassactions.com/sitemap_index.xml",
+  "form tca-9939dd66327f: unreadable (likely script-rendered)",
+  "form tca-09cdb4b98c2a: unreadable (likely script-rendered)",
+  "form tca-6000524ffc42: HTTP 403",
+  "form tca-6853ce875683: HTTP 403",
+  "form tca-319669270374: HTTP 403",
+  "form tca-c8344afd62ad: HTTP 403",
+  "form tca-10b73315b96e: unreadable (likely script-rendered)",
+  "form tca-0d835a771a73: HTTP 403",
+  "form tca-02575c97c6c6: checked needs PIN",
+  "form tca-4c0cbb3af812: HTTP 403",
+  "form tca-d8eb6dc5e572: HTTP 403",
+  "form tca-2bfe14438a8f: checked needs claim number",
+  "form tca-5517685618f1: HTTP 403",
+  "form tca-efa72b134a47: HTTP 403",
+  "form tca-c808846f66d7: unreadable (likely script-rendered)",
+  "form tca-e285640d56a9: HTTP 403",
+  "form tca-0f25ebeba781: HTTP 403",
+  "form tca-45b93135c672: HTTP 403",
+  "form tca-5e60da839b6f: HTTP 403",
+  "form tca-8f81bd221039: unreadable (likely script-rendered)",
+  "form tca-c8af61dc02ca: checked needs Claim Number",
+  "form tca-5a7780fcbf00: HTTP 403",
+  "form tca-c3b53fb6a69f: HTTP 403",
+  "form tca-a7f8996e4621: HTTP 403",
+  "form tca-7ed7abe76938: checked needs Notice Id",
+  "form tca-e3170f97dda9: checked needs claimant id"
  ]
 }
