@@ -117,8 +117,8 @@
     "Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming"];
   const SHEET_EDIT = "https://docs.google.com/spreadsheets/d/1jCjEKiU8iKn5aLoVkl1PLQI9H-kzmLx_BIngiMZz4OA/edit";
   const NOTES = {
-    easy: "No proof of purchase needed and open to Massachusetts residents. If the eligible line describes you, filing usually takes a couple of minutes.",
-    proof: "Settlements needing receipts or documentation, limited to other states, or missing details in the listing.",
+    easy: "No proof, no notice ID, and open to Massachusetts residents. If the eligible line describes you, filing usually takes a couple of minutes.",
+    proof: "Settlements needing receipts, a notice ID, residency in another state, or missing details in the listing.",
     dismissed: "Hidden settlements. Restore any to put it back."
   };
   let data = { generated: null, settlements: [] };
@@ -159,7 +159,7 @@
   }
   function bucket(s, dis) {
     if (dis[s.id]) return "dismissed";
-    return s.noProof === true && !otherState(s) ? "easy" : "proof";
+    return s.noProof === true && !s.needsId && !otherState(s) ? "easy" : "proof";
   }
 
   function render() {
@@ -199,7 +199,8 @@
       const award = realPay ? '<span class="pay">' + esc(s.payout) + '</span>' :
         (s.payout && /^varies$/i.test(s.payout.trim()) ? "Award varies" : "Award TBD");
       const st = otherState(s);
-      const stNote = st ? ' &middot; <span class="proof">' + esc(st) + ' only</span>' : "";
+      const stNote = (st ? ' &middot; <span class="proof">' + esc(st) + ' only</span>' : "") +
+        (s.needsId ? ' &middot; <span class="proof">Needs ID from a notice (try the lookup on the claim site)</span>' : "");
       const fund = s.fund ? " &middot; " + esc(s.fund) + " fund" : "";
       const proof = s.noProof === true ? "" :
         ' &middot; <span class="proof">' + (s.proof ? "Proof: " + esc(s.proof) : "Proof requirement unknown") + "</span>";

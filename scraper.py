@@ -272,6 +272,21 @@ def claim_form_url(raw):
     return None
 
 
+ID_RE = re.compile(
+    r"class member id|claimant id|notice id|unique id|unique identifier|"
+    r"claim id|member id number|pin code|\bpin\b|activation code|"
+    r"received (?:a |an )?(?:email|postcard|letter|notice|mailed notice)|"
+    r"(?:were|was) sent (?:a |an )?(?:email|postcard|notice)|"
+    r"who received notice|identified (?:as|in) (?:class members|the records)",
+    re.I,
+)
+
+
+def needs_id(body):
+    m = ID_RE.search(body)
+    return m.group(0) if m else None
+
+
 def classify_proof(value):
     if value is None:
         return None
@@ -302,6 +317,7 @@ def entry_from_feed_item(it):
         "eligible": eligible,
         "proof": proof,
         "noProof": classify_proof(proof),
+        "needsId": needs_id(body),
         "deadline": deadline,
         "payout": payout,
         "fund": find_payout(it["title"]),
