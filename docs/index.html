@@ -80,7 +80,7 @@
 
   <div class="tabs" role="tablist">
     <button class="tab on" data-view="easy">No proof needed<span class="n" id="nEasy"></span></button>
-    <button class="tab" data-view="proof">Proof required<span class="n" id="nProof"></span></button>
+    <button class="tab" data-view="proof">Everything else<span class="n" id="nProof"></span></button>
     <button class="tab" data-view="dismissed">Dismissed<span class="n" id="nDis"></span></button>
   </div>
   <p class="note" id="viewNote"></p>
@@ -108,10 +108,17 @@
 <script>
 (function () {
   const DK = "claimwatch:dismissed";
+  const HOME_STATE = "Massachusetts";
+  const STATES = ["Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware",
+    "Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine",
+    "Maryland","Massachusetts","Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada",
+    "New Hampshire","New Jersey","New Mexico","New York","North Carolina","North Dakota","Ohio","Oklahoma",
+    "Oregon","Pennsylvania","Rhode Island","South Carolina","South Dakota","Tennessee","Texas","Utah",
+    "Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming"];
   const SHEET_EDIT = "https://docs.google.com/spreadsheets/d/1jCjEKiU8iKn5aLoVkl1PLQI9H-kzmLx_BIngiMZz4OA/edit";
   const NOTES = {
-    easy: "Open settlements where the listing says no proof of purchase is needed. If the eligible line describes you, filing usually takes a couple of minutes.",
-    proof: "These need receipts or other documentation, or the listing didn't say. Lower odds of being worth your time.",
+    easy: "No proof of purchase needed and open to Massachusetts residents. If the eligible line describes you, filing usually takes a couple of minutes.",
+    proof: "Settlements needing receipts or documentation, limited to other states, or missing details in the listing.",
     dismissed: "Hidden settlements. Restore any to put it back."
   };
   let data = { generated: null, settlements: [] };
@@ -139,9 +146,20 @@
     const days = s.deadline ? daysUntil(s.deadline) : null;
     return days === null || days >= 0;
   }
+  function otherState(s) {
+    const t = s.eligible || "";
+    if (!t || t.includes(HOME_STATE)) return null;
+    const scrubbed = t.replace(/West Virginia/g, "").replace(/Washington,? D\.?C\.?/g, "");
+    for (const st of STATES) {
+      if (st === HOME_STATE) continue;
+      const re = new RegExp("\\b" + st + "\\b");
+      if (re.test(st === "Virginia" ? scrubbed : t)) return st;
+    }
+    return null;
+  }
   function bucket(s, dis) {
     if (dis[s.id]) return "dismissed";
-    return s.noProof === true ? "easy" : "proof";
+    return s.noProof === true && !otherState(s) ? "easy" : "proof";
   }
 
   function render() {
@@ -177,7 +195,11 @@
       const days = s.deadline ? daysUntil(s.deadline) : null;
       const urgent = days !== null && days <= 14;
       const isNew = s.firstSeen && new Date(s.firstSeen).getTime() >= cutoff;
-      const award = s.payout ? '<span class="pay">' + esc(s.payout) + '</span>' : "Award TBD";
+      const realPay = s.payout && !/^(none|varies|tbd|n\/a)$/i.test(s.payout.trim());
+      const award = realPay ? '<span class="pay">' + esc(s.payout) + '</span>' :
+        (s.payout && /^varies$/i.test(s.payout.trim()) ? "Award varies" : "Award TBD");
+      const st = otherState(s);
+      const stNote = st ? ' &middot; <span class="proof">' + esc(st) + ' only</span>' : "";
       const fund = s.fund ? " &middot; " + esc(s.fund) + " fund" : "";
       const proof = s.noProof === true ? "" :
         ' &middot; <span class="proof">' + (s.proof ? "Proof: " + esc(s.proof) : "Proof requirement unknown") + "</span>";
@@ -191,7 +213,7 @@
         '<p class="meta">' +
           '<span class="' + (urgent ? "urgent" : "") + '">' +
           (s.deadline ? "Deadline " + esc(s.deadline) + (days !== null ? " (" + days + " days)" : "") : "Deadline unknown") +
-          '</span> &middot; ' + award + fund + proof +
+          '</span> &middot; ' + award + fund + proof + stNote +
         '</p>' +
         '<div class="row">' +
           '<a class="btn primary" target="_blank" rel="noopener" href="' + esc(fileUrl) + '">File claim</a>' +
